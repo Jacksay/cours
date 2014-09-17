@@ -1,0 +1,77 @@
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+.alert, .info, .danger  {
+	background: #EEEEEE;
+	padding: 1em 2em .5em 60px;
+	margin: .5em 0;
+	border-radius: 8px;
+	font-size: 1.2em;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	-webkit-print-color-adjust: exact;
+	border: solid 1px #eee;
+	} 
+@media print {
+	.info {
+		color: #FF6600;
+	}
+	.info:before {
+		content: "Informations : ";
+	}
+}
+
+.page-header {
+	background-color: #a1de6f;
+	margin: 0;
+	text-align: center;
+}
+
+.alert-info, .info {
+	background-color: #e0f0f3;
+	background-image: url('images/info.png');
+}
+
+.alert-danger, .danger {
+	background-color: #f3e5e0;
+}
+
+.content {
+	padding: 0 0 0 16px;
+}
+
+.content h1, .content h2{ 
+	margin-left: -16px;
+}
+
+.content h1:before {
+	color: #999;
+	content: counter(h1)". ";
+}
+
+.content h1 {
+	font-size: 2.4em;
+	margin-top: 1em;
+	border-bottom: thin solid #CCC;
+	counter-reset: h2;
+	counter-increment: h1;
+}
+
+.content h2 {
+	margin-top: 2em;
+	counter-reset: h3;
+	counter-increment: h2;
+}
+.content h2:before {
+	color: #999;
+	content: counter(h1)"."counter(h2)". ";
+}
+
+.content h1 + h2 {
+	margin-top: 0;
+}
+
+article .sourceCode * {
+	pointer-events: none !important;
+}
