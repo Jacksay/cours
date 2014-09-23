@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="395.92764"
+   height="592.76556"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="balises-ouvrantes-fermantes.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3974"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-0"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3974-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-1"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3974-6"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-4"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3974-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="117.4491"
+     inkscape:cy="326.69911"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="726"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-3.4647569,-459.55082)">
+    <rect
+       style="color:#000000;fill:#bcd35f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4878"
+       width="366.68539"
+       height="206.07112"
+       x="18.617044"
+       y="491.68683" />
+    <rect
+       style="color:#000000;fill:#66ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4778"
+       width="70.710678"
+       height="102.02541"
+       x="-76.110733"
+       y="538.06323"
+       transform="matrix(0.98299389,-0.18363825,0.18363825,0.98299389,0,0)" />
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="63.571552"
+       y="424.5174"
+       id="text2987"
+       sodipodi:linespacing="125%"
+       transform="scale(0.67732583,1.4763943)"><tspan
+         sodipodi:role="line"
+         id="tspan2989"
+         x="63.571552"
+         y="424.5174">&lt;</tspan></text>
+    <rect
+       style="color:#000000;fill:#66ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4778-6"
+       width="70.710678"
+       height="102.02541"
+       x="361.55249"
+       y="494.25409"
+       transform="matrix(0.99379275,0.11124734,-0.11124734,0.99379275,0,0)" />
+    <rect
+       style="color:#000000;fill:#99ff55;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4822"
+       width="216.17264"
+       height="81.822357"
+       x="93.36834"
+       y="541.59039" />
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="98.41909"
+       y="606.24017"
+       id="text2991"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993"
+         x="98.41909"
+         y="606.24017">balise</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-564.51654"
+       y="-356.75201"
+       id="text2987-9"
+       sodipodi:linespacing="125%"
+       transform="matrix(-0.67679882,-0.02671382,0.05822917,-1.4752456,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-8"
+         x="-564.51654"
+         y="-356.75201">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bcd35f;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="22.65765"
+       y="482.59546"
+       id="text4880"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4882"
+         x="22.65765"
+         y="482.59546">Balise ouvrante</tspan></text>
+    <rect
+       style="color:#000000;fill:#bcd35f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4878-1"
+       width="366.68539"
+       height="206.07112"
+       x="19.12212"
+       y="738.18048" />
+    <g
+       id="g4994"
+       transform="translate(1.0101525,11.111678)">
+      <rect
+         transform="matrix(0.98299389,-0.18363825,0.18363825,0.98299389,0,0)"
+         y="774.44708"
+         x="-140.10304"
+         height="83.338806"
+         width="57.759563"
+         id="rect4778-9"
+         style="color:#000000;fill:#66ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         transform="scale(0.67732583,1.4763943)"
+         sodipodi:linespacing="125%"
+         id="text2987-3"
+         y="586.68445"
+         x="13.909976"
+         style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="586.68445"
+           x="13.909976"
+           id="tspan2989-9"
+           sodipodi:role="line">&lt;</tspan></text>
+    </g>
+    <rect
+       style="color:#000000;fill:#66ff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4778-6-8"
+       width="70.710678"
+       height="102.02541"
+       x="399.17786"
+       y="735.02606"
+       transform="matrix(0.99379275,0.11124734,-0.11124734,0.99379275,0,0)" />
+    <rect
+       style="color:#000000;fill:#ff6600;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4999"
+       width="38.385799"
+       height="94.954346"
+       x="67.10437"
+       y="781.59546" />
+    <rect
+       style="color:#000000;fill:#99ff55;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4822-4"
+       width="216.17264"
+       height="81.822357"
+       x="107.00538"
+       y="786.06378" />
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="103.97491"
+       y="848.69324"
+       id="text2991-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993-4"
+         x="103.97491"
+         y="848.69324">balise</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-594.34052"
+       y="-521.24426"
+       id="text2987-9-3"
+       sodipodi:linespacing="125%"
+       transform="matrix(-0.67679882,-0.02671382,0.05822917,-1.4752456,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-8-0"
+         x="-594.34052"
+         y="-521.24426">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bcd35f;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="23.162708"
+       y="729.08911"
+       id="text4880-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4882-8"
+         x="23.162708"
+         y="729.08911">Balise fermante</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:73.93717956999999785px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="88.559814"
+       y="742.35425"
+       id="text2987-3-7"
+       sodipodi:linespacing="125%"
+       transform="scale(0.86559965,1.1552685)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-9-5"
+         x="88.559814"
+         y="742.35425">/</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="29.728725"
+       y="916.95593"
+       id="text5001"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5003"
+         x="29.728725"
+         y="916.95593">La présence du <tspan
+   style="font-size:16px;font-weight:bold"
+   id="tspan5007">/ </tspan>avant le nom de la balise </tspan><tspan
+         sodipodi:role="line"
+         x="29.728725"
+         y="936.95593"
+         id="tspan5005">indique qu'il s'agit d'une <tspan
+   style="font-size:16px;font-weight:bold"
+   id="tspan5009">balise fermante</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart-4)"
+       d="m 92.934034,407.90765 c 42.426406,3.03046 59.598996,32.32488 59.598996,32.32488"
+       id="path5011"
+       inkscape:connector-curvature="0"
+       transform="translate(3.4647569,459.55082)" />
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 % Technologies XML
-% Stéphane Bouvry
+% Stéphane Bouvry <jacksay.com>
 % Caen, 2014
 
 
@@ -60,21 +60,25 @@ Une même information peut être présentée <br/> de différentes façons...
 
 ---
 
-### Structure sémantique
+![](../images/structure-source.jpg)
 
-Organise les informations, exemple : 
+---
+
+### Structure logique
+
+La structure logique organise les informations, exemple : 
 
 - titre
 - chapo
 - contenu
 - date de publication
 - auteur
-- catgorie
+- catégorie
 - etc...
 
 ---
 
-### Avec XML...
+Représentation d'une news avec XML
 
 ```xml
 <article identifiant="42">
@@ -86,6 +90,7 @@ Organise les informations, exemple :
 	<auteur>Jean-Claude</auteur>
 </article>
 ```
+
 Cool, XML est en français... en fait non
 
 ---
@@ -273,7 +278,38 @@ Elles permettent de délimiter une zone de contenu libre :
 </content>
 ```
 
+---
+
 # L'arbre XML
+
+---
+
+## Le code XML
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<personnages>
+	<personnage id="42">
+		<pseudo>Le gouverneur</pseudo>
+		<prenom>Phillip</prenom>
+		<nom>Blake</nom>
+		<bio>
+			<p>
+				Il gère Woodbury
+			</p>
+			<p>
+				Il est vraiment 
+				<strong>très</strong>
+				méchant
+			</p>
+		</bio>
+	</personnage>
+</personnages>
+```
+
+---
+
+![](../images/arbre-XML.jpg)
 
 
 
@@ -335,6 +371,15 @@ On peut vérifier la conformité d'un document :
 	`xmllint --noout fichier.xml` <http://xmlsoft.org/xmllint.html>
 
 ---
+
+### Références
+
+Cours XML sur openclassroom <http://fr.openclassrooms.com/informatique/cours/structurez-vos-donnees-avec-xml/qu-est-ce-que-le-xml>
+
+Cours de Gilles Chegnon <http://www.gchagnon.fr/cours/xml/base.html>
+
+--- 
+
 
 
 <div style="font-size: .8em; text-align: justify">Une bouteille d’eau Cristaline de 150cl contient par litre 71mg d’ions positifs calcium, et 5,5mg d’ions positifs magnésium. On y trouve également des ions négatifs comme des chlorures à 20mg par litre et des nitrates avec 1mg par litre. Elle est recueillie à St-Cyr la Source, dans le département du Loiret. Son code barre est 3274080005003 et son pH est de 7,45. Comme la bouteille est sale, quelques autres matériaux comme du fer s’y trouvent en suspension.

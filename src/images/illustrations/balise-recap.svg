@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="800"
+   height="592.76556"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="balise-recap.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3974"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-0"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3974-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-1"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3974-6"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart-4"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3974-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="502.31722"
+     inkscape:cy="313.56713"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="726"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-3.4647569,-459.55082)">
+    <rect
+       style="color:#000000;fill:#99ff55;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4822-4"
+       width="389.91888"
+       height="362.64478"
+       x="9.0206032"
+       y="542.21094" />
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="18.83005"
+       y="433.13693"
+       id="text2987"
+       sodipodi:linespacing="125%"
+       transform="scale(0.67732583,1.4763943)"><tspan
+         sodipodi:role="line"
+         id="tspan2989"
+         x="18.83005"
+         y="433.13693">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="68.11451"
+       y="618.96606"
+       id="text2991"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993"
+         x="68.11451"
+         y="618.96606">balise</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-520.5509"
+       y="-366.17444"
+       id="text2987-9"
+       sodipodi:linespacing="125%"
+       transform="matrix(-0.67679882,-0.02671382,0.05822917,-1.4752456,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-8"
+         x="-520.5509"
+         y="-366.17444">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="12.418597"
+       y="615.83002"
+       id="text2987-3"
+       sodipodi:linespacing="125%"
+       transform="scale(0.67732583,1.4763943)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-9"
+         x="12.418597"
+         y="615.83002">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:72px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="89.832771"
+       y="887.68304"
+       id="text2991-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan2993-4"
+         x="89.832771"
+         y="887.68304">balise</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-566.63"
+       y="-546.12115"
+       id="text2987-9-3"
+       sodipodi:linespacing="125%"
+       transform="matrix(-0.67679882,-0.02671382,0.05822917,-1.4752456,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-8-0"
+         x="-566.63"
+         y="-546.12115">&lt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:73.93717957px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="74.555862"
+       y="770.8576"
+       id="text2987-3-7"
+       sodipodi:linespacing="125%"
+       transform="scale(0.86559965,1.1552685)"><tspan
+         sodipodi:role="line"
+         id="tspan2989-9-5"
+         x="74.555862"
+         y="770.8576">/</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:36px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="17.606895"
+       y="495.72232"
+       id="text3050"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3052"
+         x="17.606895"
+         y="495.72232">Cas N°1 : </tspan></text>
+    <g
+       id="g3345"
+       transform="translate(-55.55839,-6.467017)">
+      <rect
+         y="649.2655"
+         x="129.73383"
+         height="169.70563"
+         width="306.07623"
+         id="rect3334"
+         style="color:#000000;fill:#666666;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3054"
+         y="714.92542"
+         x="151.95718"
+         style="font-size:48px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="714.92542"
+           x="151.95718"
+           id="tspan3056"
+           sodipodi:role="line">Délimite </tspan><tspan
+           id="tspan3058"
+           y="774.92542"
+           x="151.95718"
+           sodipodi:role="line">un contenu</tspan></text>
+    </g>
+    <rect
+       style="color:#000000;fill:#ffb380;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.79999995;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect4822-4-1"
+       width="341.43155"
+       height="340.42142"
+       x="437.83035"
+       y="558.95581" />
+    <g
+       id="g3453"
+       transform="translate(0,140)">
+      <text
+         transform="scale(0.67732583,1.4763943)"
+         sodipodi:linespacing="125%"
+         id="text2987-3-8"
+         y="413.29153"
+         x="645.51086"
+         style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="413.29153"
+           x="645.51086"
+           id="tspan2989-9-8"
+           sodipodi:role="line">&lt;</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text2991-6-2"
+         y="588.65631"
+         x="488.64255"
+         style="font-size:72px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="588.65631"
+           x="488.64255"
+           id="tspan2993-4-3"
+           sodipodi:role="line">balise</tspan></text>
+      <text
+         transform="matrix(-0.67679882,-0.02671382,0.05822917,-1.4752456,0,0)"
+         sodipodi:linespacing="125%"
+         id="text2987-9-3-7"
+         y="-332.28516"
+         x="-1181.8176"
+         style="font-size:94.48923492px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="-332.28516"
+           x="-1181.8176"
+           id="tspan2989-8-0-6"
+           sodipodi:role="line">&lt;</tspan></text>
+      <text
+         transform="scale(0.86559965,1.1552685)"
+         sodipodi:linespacing="125%"
+         id="text2987-3-7-6"
+         y="512.02014"
+         x="812.55273"
+         style="font-size:73.93717957px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           y="512.02014"
+           x="812.55273"
+           id="tspan2989-9-5-3"
+           sodipodi:role="line">/</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:36px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="583.91425"
+       y="502.88895"
+       id="text3050-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3052-7"
+         x="583.91425"
+         y="502.88895">Cas N°2 : </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="21.25927"
+       y="519.05139"
+       id="text3050-97"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3052-4"
+         x="21.25927"
+         y="519.05139">Balise ouvrante/fermante </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+       x="534.35449"
+       y="525.62579"
+       id="text3050-97-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3052-4-0"
+         x="534.35449"
+         y="525.62579">Balise auto-fermante </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:32px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="32.759178"
+       y="945.24023"
+       id="text3505"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3507"
+         x="32.759178"
+         y="945.24023">! tous autre cas est une <tspan
+   style="font-size:32px;font-weight:bold;fill:#d40000;-inkscape-font-specification:Sans Bold"
+   id="tspan3509">erreur de syntaxe</tspan></tspan></text>
+  </g>
+</svg>
