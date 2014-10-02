@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<personnages>
+	<personnage maison="stark">
+		<nom>Stark</nom>
+		<prenom>Ned</prenom>
+	</personnage>
+	<personnage maison="stark">
+		<nom>Snow</nom>
+		<prenom>Jon</prenom>
+	</personnage>
+	<personnage maison="targaryen">
+		<nom>Targaryen</nom>
+		<prenom>Daenerys</prenom>
+	</personnage>
+</personnages>
