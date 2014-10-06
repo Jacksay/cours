@@ -99,7 +99,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid black;
+  border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -165,7 +165,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 
 .reveal {
-	color: $colorBase;
+	color: #444444;
 
 	pre.sourceCode {
 		background: #FFFFFF;
@@ -183,7 +183,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	}
 
 	h1, h2, h3, h4, h5, h6, strong, code {
-		color: darken($colorPrimary, 15%);
+		color: #000000;//darken($colorPrimary, 15%);
 	}
 
 	.col {
@@ -197,10 +197,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 	figcaption {
 		font-size: .75em;
-	}
-
-	h2 {
-		border-bottom: thin white solid;
 	}
 
 	.author, .date {
@@ -224,12 +220,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 			padding: .25em;
 		}
 
-		thead {
-			th {
-				background-color: $colorPrimary;
-				color: $colorWhite;
-				text-align: center;
-			}
+		th {
+			background-color: $colorPrimary;
+			color: $colorWhite;
+			text-align: center;
 		}
 
 		tbody {

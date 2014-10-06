@@ -64,7 +64,7 @@ Et ce que vous recevez :
 
 ---
 
-Un document doit être conforme, mais pour permettre d'être exploité par un système tiers, il doit avoir une stucture définit.
+Un document doit être conforme, mais pour permettre d'être exploité par un système tiers, il doit avoir une stucture défini.
 
 ---
 
@@ -90,33 +90,36 @@ La **doctype** permet d'associer à un fichier XML une DTD
 
 ### DOCTYPE interne
 
+La définition est directement dans le prologue
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE arbreXML [
+<!DOCTYPE racine [
 	<!-- DTD directement ici -->
 ]>
-<arbreXML>
+<racine>
 	...
-</arbreXML>
+</racine>
 ```
 
 ---
 
 ### DOCTYPE externe
-Permet d'utiliser la même DTD dans plusieurs fichiers XML.
+Permet d'utiliser la même DTD dans plusieurs fichiers XML. La définition est placé dans un fichier externe.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE arbreXML SYSTEM "emplacement/du/fichier.dtd">
-<arbreXML>
+<!DOCTYPE racine SYSTEM "emplacement/du/fichier.dtd">
+<racine>
 	...
-</arbreXML>
+</racine>
 ```
+
 ---
 
 ### DOCTYPE publique
 
-Sous la forme `<!DOCTYPE balise PUBLIC "nom publique" "URL">`{.dtd}
+Sous la forme `<!DOCTYPE balise PUBLIC "nom publique" "URL">`{.dtd}.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -126,6 +129,9 @@ Sous la forme `<!DOCTYPE balise PUBLIC "nom publique" "URL">`{.dtd}
 	...
 </html>
 ```
+Exemple connu : XHTML
+
+
 ---
 
 ## Contenu de la DTD
@@ -187,7 +193,10 @@ Valide :
 ```xml
 <nom>Dus</nom>
 <!-- ou -->
-<nom><![CDATA[Contenu texte <strong>plus compliqué</strong>]]></nom>
+<nom><![CDATA[
+	Contenu texte 
+	<strong>plus compliqué</strong>
+	]]></nom>
 
 ```
 
@@ -274,7 +283,7 @@ Le caractère pipe `|` permet de définir un OU logique :
 <!ELEMENT identite (nom | prenom)>
 ```
 
-L'élément `identite` ne peut contenir d'un `nom` ou un `prenom`
+L'élément `identite` ne peut contenir qu'un `nom` ou un `prenom`
 
 ```xml
 <identite>
@@ -287,7 +296,7 @@ L'élément `identite` ne peut contenir d'un `nom` ou un `prenom`
 
 ---
 
-Le OU peut être combiné
+Le OU peut être combiné avec des parenthèses
 
 ```dtd
 <!ELEMENT identite ((nom, prenom) | pseudo)>
@@ -333,9 +342,9 @@ Si le contenu d'un élément contient indistinctement du texte ou les éléments
 ## Les attributs
 
 Se déclarent sous la forme : \ 
-```
+```dtd
 <!ATTLIST nomElement 
-	nomAttribut <type> <mode>
+	nomAttribut [TYPE] [mode]
 >
 ```
 
@@ -395,8 +404,7 @@ Et un mode :
 <!ELEMENT ville (#PCDATA)>
 <!ATTLIST nom prenom CDATA #REQUIRED>
 <!ATTLIST ville codePostal CDATA #REQUIRED>
-<!ATTLIST  telephone type (domicile|travail|portable) "
-domicile"  #IMPLIED>
+<!ATTLIST  telephone type (domicile|travail|portable) "domicile"  #IMPLIED>
 ```
 
 ---

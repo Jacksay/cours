@@ -23,7 +23,7 @@ Ce document est un fichier texte contenant du XML ;
 
 - Le document doit être valide et conforme ;
 - Il contient un prologue et un arbre d’éléments ;
-- Les noms des balises XML-Schema sont préfixés par "*xsd*" ;
+- Les noms des balises XML-Schema sont préfixés par "*xsd*" (*espace de nom* traditionnel)
 - L’élément racine du document correspond à la balise `<xsd:schema>`{.xml}.
 
 ---
@@ -76,24 +76,24 @@ Exemple :
 
 <table class="table-bordered">
 	<thead>
-		<tr style="border-bottom: solid thin #999999">
-			<th>élément</th>
+		<tr>
+			<td>&nbsp;</td>
 			<th>Sans attribut</th>
 			<th>Avec attribut</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td>Contenu textuel</td>
+			<th>Contenu textuel uniquement</th>
 			<td>type simple</td>
 			<td>type complexe (contenu simple)</td>
 		</tr>
 		<tr>
-			<td>Contenu (élément)</td>
+			<th>Contenu (élément)</th>
 			<td colspan="2">type complexe (contenu complexe)</td>
 		</tr>
 		<tr>
-			<td>Attribut</td>
+			<th>Attribut</th>
 			<td colspan="2">type simple</td>
 		</tr>
 	</tbody>
@@ -148,7 +148,7 @@ On utilisera :
 
 - `xsd:time` : HH:MM:SS.sss
 - `xsd:date` : YYYY:MM:DD
-- `xsd:datetime` : <date>T<time>
+- `xsd:datetime` : \<date>T\<time>
 - `xsd:gYear` : Année sous la forme YYYY
 - `xsd:gMonth` : Mois sous la forme MM
 - `xsd:gDay` : Jour sous la forme DD
@@ -399,8 +399,9 @@ On peut bien sûr les combiner...
 
 Attention, Les types complexes concernent : 
 
-- un élément contenant des éléments (on parle de **contenu complexe** ),
-- un élément ayant des attributs (**contenu simple**)
+- un élément contenant des éléments (**contenu complexe** ),
+- les éléments vides avec attributs
+- un élément avec contenu textuel avec des attributs (**contenu simple**)
 
 ---
 
@@ -478,6 +479,14 @@ Avec `xsd:all`, l'ordre d'apparition des éléments \
 
 ---
 
+### xsd:all, attention
+
+- Les éléments déclarés ne peuvent apparaître d'une seule fois ou jamais
+- `xsd:all` ne peut pas être utilisé dans `xsd:sequence`, `xsd:choice` ou un autre `xsd:all`
+- `xsd:all` ne peut contenir que des éléments
+
+---
+
 ### xsd:choice
 
 Avec `xsd:choice`, seul un des 3 éléments devra être présent.
@@ -496,17 +505,17 @@ Avec `xsd:choice`, seul un des 3 éléments devra être présent.
 
 ---
 
-### min/max occurs
+### minOccurs, maxOccurs
 
-Les propriétés `minoccurs` et `maxoccurs` permettent de préciser le nombre de fois ou l'élément peut apparaître : 
+Les propriétés `minOccurs` et `maxOccurs` permettent de préciser le nombre de fois ou l'élément peut apparaître : 
 
 ```xml
 <xsd:element name="personnagesFavoris">
 	<xsd:complexType>
 		<xsd:sequence>
 			<xsd:element name="personnage" type="typePersonnage" 
-				minoccurs="1" 
-				maxoccurs="5" />
+				minOccurs="1" 
+				maxOccurs="5" />
 		</xsd:sequence>
 	</xsd:complexType>
 </xsd:element>
@@ -519,6 +528,14 @@ Les propriétés `minoccurs` et `maxoccurs` permettent de préciser le nombre de
 	</xsd:sequence>
 </xsd:complexType>
 ```
+
+---
+
+### minOccurs, maxOccurs, précision
+
+- Par défaut, les valeurs de minOccurs et maxOccurs sont fixées à 1
+- La valeur `unbounded` autorise une valeur entre 0 et l'infini
+- On peut mettre 0
 
 ---
 
@@ -663,6 +680,184 @@ Enfin on définit les attributs :
 	</xsd:simpleContent>
 </xsd:complexType>
 ```
+
+---
+
+## Element vide
+
+---
+
+### Sans attributs
+
+Pour valider un élément vide **sans attributs**, on doit passer par un *complexContent* (??!)
+
+```xml
+<!-- Elément à valider -->
+<br />
+```
+
+```xml
+<xsd:element name="br" type="typeVide" />
+
+<!-- le type -->
+<xsd:complexType name="typeVide">
+    <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType"/>
+    </xsd:complexContent>
+</xsd:complexType>
+```
+
+---
+
+### Avec attributs
+
+Si il a des attributs, on les déclare dans la restriction :
+
+```xml
+<!-- Elément à valider -->
+<hr type="section-separator" />
+```
+
+```xml
+<xsd:element name="br" type="typeVide" />
+
+<!-- le type -->
+<xsd:complexType name="typeVide">
+    <xsd:complexContent>
+        <xsd:restriction base="xsd:anyType">
+        	<xsd:attribute name="type" type="xsd:NMTOKEN" />
+        </xsd:restriction>
+    </xsd:complexContent>
+</xsd:complexType>
+```
+
+
+## Contenu mixte
+
+Pour valider la balise bio dans ce XML : 
+
+```xml
+<personnage>
+	...
+	<bio>
+		Le gouverneur est le gérant 
+		<ironie>démocratiquement élu</ironie> 
+		de Woodbury. C'est un homme 
+		<ironie>délicat</ironie> très 
+		impliqué dans l'éducation 
+		de sa fille.
+	</bio>
+```
+
+## xsd
+
+```xml
+<xs:element name="bio">
+  <xs:complexType mixed="true">
+    <xs:sequence>
+      <xs:element name="ironie" type="xs:string" 
+      		minOccurs="0"
+      		maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element> 
+```
+
+
+---
+
+## Mauvaise idée
+
+- xsd:any
+- anyAttributes
+
+# Factorisation
+
+---
+
+Une fois les bases de XMLSchema assimilées, on peut commencer à utiliser des outils pour *factorise* la source.
+
+---
+
+## Group
+
+Cré une "grappe" réutilisable d'éléments
+
+```xml
+<xs:group name="personne">
+  <xs:sequence>
+    <xs:element name="prenom" type="xs:string"/>
+    <xs:element name="nom" type="xs:string"/>
+  </xs:sequence>
+</xs:group>
+```
+
+Puis : 
+```xml
+<xs:complexType name="personnage">
+  <xs:sequence>
+    <xs:group ref="personne"/>
+    <xs:element name="pseudo" type="xs:string"/>
+  </xs:sequence>
+</xs:complexType> 
+```
+
+## attributeGroup
+
+Permet de déclarer des attributs réutilisables :
+
+```xml
+<xs:attributeGroup name="attributsHtml">
+  <xs:attribute name="id" type="xs:string"/>
+  <xs:attribute name="class" type="xs:NMTOKENS"/>
+  <xs:attribute name="style" type="xs:string"/>
+</xs:attributeGroup> 
+```
+
+A l'usage : 
+```xml
+<xs:element name="monElement">
+  <xs:complexType>
+    <xs:attributeGroup ref="attributsHtml"/>
+  </xs:complexType>
+</xs:element> 
+```
+
+---
+
+## Etendre un type complexe
+
+```xml
+<xsd:complexType  name="personnageAvecSurnom">
+	<xsd:complexContent>
+		<xsd:extension base="typePersonne">
+			<xsd:sequence>
+		 		<xsd:element   name="surnom" type="xsd:string" />
+			</xsd:sequence>
+			<xsd:attribute name="from" type="xsd:string" />
+		</xsd:extension>
+	</xsd:complexContent>
+</xsd:complexType>
+```
+
+## Restrindre un type complexe
+
+```xml
+<xsd:element   name="petitCarnet">
+	<xsd:complexType>
+		<xsd:complexContent>
+			<xsd:restriction base="carnet">
+				<xsd:sequence>
+					<xsd:element   name="personne" type="typePersonne"
+						maxOccurs="100"/>
+				</xsd:sequence>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:element>
+```
+
+Les éléments du type initial doivent être répétés...
 
 # Annexe
 

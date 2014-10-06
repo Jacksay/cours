@@ -96,7 +96,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid black;
+  border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -161,7 +161,7 @@ body {
   color: darkblue; }
 
 .reveal {
-  color: #575757; }
+  color: #444444; }
   .reveal pre.sourceCode {
     background: #FFFFFF; }
   .reveal [data-background-hash^="warning"] {
@@ -171,7 +171,7 @@ body {
     .reveal [data-background="warning"] h1, .reveal [data-background="warning"] h2, .reveal [data-background="warning"] h3, .reveal [data-background="warning"] h4, .reveal [data-background="warning"] h5, .reveal [data-background="warning"] h6, .reveal [data-background="warning"] strong, .reveal [data-background="warning"] code {
       color: #000; }
   .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal strong, .reveal code {
-    color: #1b3e46; }
+    color: #000000; }
   .reveal .col {
     width: 50%;
     float: left; }
@@ -179,8 +179,6 @@ body {
     font-size: 2em; }
   .reveal figcaption {
     font-size: .75em; }
-  .reveal h2 {
-    border-bottom: thin white solid; }
   .reveal .author, .reveal .date {
     font-weight: 100;
     font-family: "Open Sans";
@@ -194,7 +192,7 @@ body {
     background-color: white; }
     .reveal .table-bordered td, .reveal .table-bordered th {
       padding: .25em; }
-    .reveal .table-bordered thead th {
+    .reveal .table-bordered th {
       background-color: #316e7d;
       color: white;
       text-align: center; }

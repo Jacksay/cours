@@ -22,17 +22,46 @@ eXtensible Markup Language
 
 - A modéliser des structures d'informations logiques
 - utilisé pour **l'interopérabilité** des sytèmes d'information
-- Créer d'autres langages (SVG, RSS, HTML, etc...)
+- Créer d'autres langages
+
+---
+
+### Concrètement ?
+
+- XHTML
+- XSLT (Transformation XML)
+- XSL-FO (Production de document PDF)
+- XML Schema (Validation XML)
+- MathML (description de formule mathématique)
+- RSS et Atom (Syndication)
+- RDF (Description de documents)
+- SVG (Dessin vectoriel)
+- SMIL (Multimédias)
+- GML (Données géographiques)
+- Dublin Core (Bibliographie)
+
+---
+
+- OpenDocument
+- Configuration des serveurs Java (Glasfish, Tomcat, SolR)
+- Configuration sous Symfony2 (Framework)
+- XUL (Interface graphique)
+- XAMP (Idem, sous window)
+- MXML (feu Flex)
+- SOAP et RPC (Web service)
+- XMPP (Jabber)
+- XQuery
+- DocBook
 
 
 ----
 
-### XML : Structure logique
+### Structure de document
 
 Dans un document, on distingue :
 
-- La structure visuelle
-- La structure sémantique
+- La structure visuelle (présentation)
+- La structure logique (sémantique)
 
 ---
 
@@ -225,10 +254,11 @@ Les attributs permettent d'enrichir les informations relatives à un élément.
 
 Il y'a quelques régles pour les attributs :
 
-- Mêmes règles de nommage que pour les noms d'éléments.
-- Un élément peut contenir autant d'attributs que l'on veut.
-- Seul les éléments ouvrants et les éléments vides ont des attributs.
-- Les valeurs d'attributs sont toujours entre guillemets double, même vide `<tag attribut="">`{.xml}.
+- Mêmes règles de nommage que pour les noms d'éléments,
+- Un élément peut contenir autant d'attributs que l'on veut,
+- Un attribut ne peut être présent qu'une fois pour un même élément,
+- Seul les éléments ouvrants et les éléments vides ont des attributs,
+- La valeur d'un attribut est toujours entre guillemet double, même vide `<tag attribut="">`{.xml}.
 
 
 ---
@@ -284,6 +314,11 @@ Elles permettent de délimiter une zone de contenu libre :
 
 ---
 
+XML structure les information selon un
+**modèle arborescent**.
+
+---
+
 ## Le code XML
 
 ```xml
@@ -304,6 +339,10 @@ Elles permettent de délimiter une zone de contenu libre :
 			</p>
 		</bio>
 	</personnage>
+
+	<!-- autres personnages -->
+	<personnage>...</personnages>
+	<personnage>...</personnages>
 </personnages>
 ```
 
@@ -368,15 +407,14 @@ On peut vérifier la conformité d'un document :
 
 - En l'ouvrant dans le navigateur,
 - En utilisant des outils dédiés : 
-	`xmllint --noout fichier.xml` <http://xmlsoft.org/xmllint.html>
+	`xmllint --noout fichier.xml` (<http://xmlsoft.org/xmllint.html>)
 
 ---
 
 ### Références
 
-Cours XML sur openclassroom <http://fr.openclassrooms.com/informatique/cours/structurez-vos-donnees-avec-xml/qu-est-ce-que-le-xml>
-
-Cours de Gilles Chegnon <http://www.gchagnon.fr/cours/xml/base.html>
+- Cours XML sur openclassroom <http://fr.openclassrooms.com/informatique/cours/structurez-vos-donnees-avec-xml/qu-est-ce-que-le-xml>
+- Cours de Gilles Chegnon <http://www.gchagnon.fr/cours/xml/base.html>
 
 --- 
 

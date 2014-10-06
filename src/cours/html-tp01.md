@@ -8,6 +8,12 @@
 - Structurer les données textuelles
 - Utiliser CSS pour mettre en forme le texte
 
+# Diapos
+
+Les diapos du cours peuvent être consultées aux adresses suivantes :
+
+- HTML : <http://goo.gl/bR08oZ>
+- CSS : <http://goo.gl/1A5eiR>
 
 
 # Première page web
@@ -76,7 +82,11 @@ Découvrez d'où vient l'encodage : <http://french.joelonsoftware.com/Articles/U
 
 ## Caractères spéciaux
 
-L'affichage de certains caractères en tant que texte posent des problèmes, à commencer par les chevrons `<>`. En effet, le navigateur, lorsque qu'il rencontre un chevron, va penser qu'il a affaire à une balise HTML. Pour afficher les caractères spéciaux, on a recourt aux **entités HTML**. Les entités HTML se présente toujours sous la forme `&entite;`{.xml};
+L'affichage de certains caractères en tant que texte posent parfois des problèmes, à commencer par les chevrons `<>`. En effet, le navigateur, lorsque qu'il rencontre un chevron, va penser qu'il a affaire à une balise HTML. 
+
+Par exemple, pour afficher le texte suivant :  <q>Pour délimiter un titre, on utilise la balise &lt;h1>, Si vous saisissez le texte tel quel, quand le navigateur va rencontrer  &lt;h1>, il pensera qu'il s'agit de la balise, or c'est le texte que nous voulons voir s'afficher.
+
+Pour afficher les caractères spéciaux, on a recourt aux **entités HTML**. Les entités HTML se présente toujours sous la forme `&entite;`{.xml};
 
 Voici les plus répandues : 
 
@@ -89,14 +99,33 @@ Voici les plus répandues :
 </tr>
 </thead>
 <tbody>
+
 <tr>
+<td>`&lt;`{.xml}</td>
+<td>`&#60;`{.xml}</td>
+<td>
+Le chevron ouvrant **&lt;**
+</td>
+</tr>
+<tr>
+
+<tr>
+<td>`&gt;`{.xml}</td>
+<td>`&#62;`{.xml}</td>
+<td>
+Le chevron fermant **&gt;**
+</td>
+</tr>
+<tr>
+
+
 <td>`&nbsp;`{.xml}</td>
 <td>`&#160;`{.xml}</td>
 <td>
 Espace insécable. Il permet d'éviter des retours à la ligne.
-
 </td>
 </tr>
+
 <tr>
 <td>`&laquo;`{.xml}</td>
 <td>`&#171;`{.xml}</td>
