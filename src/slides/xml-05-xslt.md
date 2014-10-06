@@ -137,6 +137,8 @@ L'attribut `match` permet de spécifier sur quel élément s'applique le templat
 
 ### Transformation par processeur...
 
+En Ligne de commande
+
 ```
 xsltproc <FICHIER XSLT> <SOURCE XML>
 ```
@@ -151,6 +153,25 @@ java -jar libs/xalan.jar
 ```
 
 D'autre processeur existent, voir leurs documentations respective.
+
+---
+
+### Avec PHP
+
+
+```php
+$xslDoc = new DOMDocument();
+$xslDoc->load("stylesheet.xsl");
+
+$xmlDoc = new DOMDocument();
+$xmlDoc->load("fichier.xml");
+
+$proc = new XSLTProcessor();
+$proc->xslDoc($importStylesheet);
+
+// Transformation
+echo $proc->transformToXML($xmlDoc);
+```
 
 ---
 
