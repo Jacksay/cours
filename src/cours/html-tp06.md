@@ -6,6 +6,7 @@
 
 - Utilisation de CSS pour la mise en page
 
+
 # Diapos
 
 - Le responsive design : <http://goo.gl/dMH8IS>

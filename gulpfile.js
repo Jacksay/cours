@@ -20,6 +20,8 @@ gulp.task('styles', ['copy-fonts','copy-images','copy-libs'], function() {
 gulp.task('prepare', function(){
     gulp.src('src/slides/favicon.png')
         .pipe(gulp.dest(destination + 'slides/'));
+gulp.src('src/cours/favicon.png')
+        .pipe(gulp.dest(destination + 'cours/'));
 });
 
 //
@@ -43,7 +45,7 @@ gulp.task('copy-libs', function() {
 
 
 
-gulp.task('compile-cours', ['copy-fonts','copy-images','copy-libs'], function() {
+gulp.task('compile-cours', ['prepare', 'copy-fonts','copy-images','copy-libs'], function() {
     gulp.src('src/cours/**/*.md', {
         read: false
     })
@@ -58,7 +60,7 @@ gulp.task('compile-cours', ['copy-fonts','copy-images','copy-libs'], function() 
         }));
 });
 
-gulp.task('compile-slide', ['copy-fonts','copy-images','copy-libs'], function() {
+gulp.task('compile-slide', ['prepare','copy-fonts','copy-images','copy-libs'], function() {
     gulp.src('src/slides/*.md', {
         read: false
     })
