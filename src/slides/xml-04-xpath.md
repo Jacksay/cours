@@ -12,8 +12,17 @@ Requêtes XML
 
 XPath est un langage permettant d’exprimer des requêtes afin de localiser des parties d’un document XML.
 
-- Il est utilisé par XSLT et XQuery
-- XPath se base sur la structure arborescente d’un document XML.
+XPath se base sur la structure arborescente d’un document XML.
+
+---
+
+## Usage courant
+
+- Les moteurs XPath (PHP, Java)
+- XSLT (transformation de document)
+- XQuery
+- DomCrawler (Composant Symfony)
+- Fonction `evaluate()` en Javascript natif
 
 ---
 
@@ -297,34 +306,34 @@ C'est le prédicat le plus utilisé, il permet de filtrer sur la position du nœ
 
 ```xml
 <?xml version="1.0"?>
-<projet basedir="." default="compile" name="Mon  projet">
-	<description> Ceci est un exemple valide de fichier ant</description>
-	<property name="options" value="-v" />
-	<path id="monClasspath">
-		<pathelement localisation="lib/xerces.jar"/>
-		<pathelement localisation="lib/xalan.jar"/>
-	</path>
+<project basedir="." default="compile" name="Mon  projet">
+    <description> Ceci est un exemple valide de fichier ant</description>
+    <property name="options" value="-v" />
+    <path id="monClasspath">
+        <pathelement localisation="lib/xerces.jar"/>
+        <pathelement localisation="lib/xalan.jar"/>
+    </path>
 
-	<target name="compile" depends="clean">
-		<javac srcdir="." encoding="ISO-8859-1">
-			<classpath refid="monClasspath"/>
-		</javac>
-		<rmic base="." classename="fr.unicaen.test.ServiceImpl">
-			<classpath refid="monClasspath">
-		</rmic>
-	</target>
+    <target name="compile" depends="clean">
+        <javac srcdir="." encoding="ISO-8859-1">
+            <classpath refid="monClasspath"/>
+        </javac>
+        <rmic base="." classename="fr.unicaen.test.ServiceImpl">
+            <classpath refid="monClasspath" />
+        </rmic>
+    </target>
 
-	<target name="documentation">
-		<ant antfile="builtxml" target="pdf" dir="doc/manuel"/>
-		<ant antfile="builtxml" target="javahelp" dir="doc/manuel"/>
-	</target>
+    <target name="documentation">
+        <ant antfile="builtxml" target="pdf" dir="doc/manuel"/>
+        <ant antfile="builtxml" target="javahelp" dir="doc/manuel"/>
+    </target>
 
-	<target name="clean">
-		<delete>
-			<fileset dir="." includes="**/*.class"/>
-			<fileset dir="." includes="*/*.java" defaul="no"/>
-		</delete>
-	</target>
+    <target name="clean">
+        <delete>
+            <fileset dir="." includes="**/*.class"/>
+            <fileset dir="." includes="*/*.java" defaul="no"/>
+        </delete>
+    </target>
 </project>
 ```
 
