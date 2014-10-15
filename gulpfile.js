@@ -1,7 +1,6 @@
 var gulp = require("gulp"),
     shell = require('gulp-shell'),
     watch = require('gulp-watch'),
-    clean = require('gulp-clean'),
     destination = "dist/";
 
 gulp.task('default', ['compile-slide', 'compile-cours'], function() {
