@@ -11,6 +11,8 @@ gulp.task('default', ['compile-slide', 'compile-cours'], function() {
 gulp.task('styles', ['copy-fonts','copy-images','copy-libs'], function() {
     gulp.src('src/css/images/**.*')
         .pipe(gulp.dest(destination + 'css/images/'));
+    gulp.src('src/css/fontello/**/*.*')
+        .pipe(gulp.dest(destination + 'css/fontello/'));
     gulp.src('src/css/**/*.css')
         .pipe(gulp.dest(destination + 'css/'));
 });
@@ -44,7 +46,7 @@ gulp.task('copy-libs', function() {
 
 
 
-gulp.task('compile-cours', ['prepare', 'copy-fonts','copy-images','copy-libs'], function() {
+gulp.task('compile-cours', ['prepare', 'styles'], function() {
     gulp.src('src/cours/**/*.md', {
         read: false
     })
@@ -59,12 +61,12 @@ gulp.task('compile-cours', ['prepare', 'copy-fonts','copy-images','copy-libs'], 
         }));
 });
 
-gulp.task('compile-slide', ['prepare','copy-fonts','copy-images','copy-libs'], function() {
+gulp.task('compile-slide', ['prepare','styles'], function() {
     gulp.src('src/slides/*.md', {
         read: false
     })
         .pipe(shell([
-            'pandoc --variable revealjs-url="../libs/reveal" --template=src/tpl/template-revealjs.html --standalone --section-divs --variable theme="simple" --variable transition="default" -s -i -t revealjs <%= file.path %> -o <%= f(file.path) %>',
+            'pandoc --variable revealjs-url="../libs/reveal.js" --template=src/tpl/template-revealjs.html --standalone --section-divs --variable theme="simple" --variable transition="default" -s -i -t revealjs <%= file.path %> -o <%= f(file.path) %>',
         ], {
             templateData: {
                 f: function(s) {

@@ -4,6 +4,7 @@ body {
 figure {
     margin: 1em 0;
 }
+
 figure img {
     display: block;
     max-width: 100%;
