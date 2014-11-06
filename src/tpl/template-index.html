@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+  <link href="css/bootstrap-light/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/cours.css" rel="stylesheet" type="text/css" media="all" />
+  
+  $if(highlighting-css)$
+  <style type="text/css">
+  $highlighting-css$
+  </style>
+  $endif$
+</head>
+<body>
+<div>
+<article>
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+<div id="$idprefix$header" class="page-header">
+  <div class="container">
+    <h1 class="title">$title$</h1>
+    $if(subtitle)$
+    <h1 class="subtitle">$subtitle$</h1>
+    $endif$
+    $for(author)$
+    <h2 class="author">$author$</h2>
+    $endfor$
+    $if(date)$
+    <h3 class="date">$date$</h3>
+    $endif$
+  </div>
+</div>
+$endif$
+$if(toc)$
+<div id="$idprefix$TOC">
+$toc$
+</div>
+$endif$
+<div class="container content">
+$body$
+</div>
+$for(include-after)$
+$include-after$
+$endfor$
+
+</article>
+</div>
+
+</body>
+</html>
