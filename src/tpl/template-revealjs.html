@@ -99,7 +99,7 @@ $body$
       Reveal.initialize({
         controls: true,
         progress: true,
-        slideNumber: true,
+        slideNumber: false,
         history: true,
         center: true,
         theme: $if(theme)$'$theme$'$else$Reveal.getQueryHash().theme$endif$, // available themes are in /css/theme
@@ -117,9 +117,5 @@ $body$
   $for(include-after)$
   $include-after$
   $endfor$
-
-  <script type="text/javascript">
-           SyntaxHighlighter.all()
-        </script>
   </body>
 </html>

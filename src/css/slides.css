@@ -21,19 +21,19 @@
 body {
   background: #ffffff;
   /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, white 0%, #d5dee5 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #d5dee5 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, white), color-stop(100%, #d5dee5));
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #ffffff), color-stop(100%, #d5dee5));
   /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, white 0%, #d5dee5 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #d5dee5 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, white 0%, #d5dee5 100%);
+  background: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #d5dee5 100%);
   /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, white 0%, #d5dee5 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #d5dee5 100%);
   /* IE10+ */
-  background: radial-gradient(ellipse at center, white 0%, #d5dee5 100%);
+  background: radial-gradient(ellipse at center, #ffffff 0%, #d5dee5 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d5dee5',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d5dee5',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */ }
 
 .reveal {
@@ -95,9 +95,7 @@ body {
  *********************************************/
 .reveal section img {
   margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12);
   border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -ms-transition: all .2s linear;
@@ -194,7 +192,7 @@ body {
       padding: .25em; }
     .reveal .table-bordered th {
       background-color: #316e7d;
-      color: white;
+      color: #FFFFFF;
       text-align: center; }
     .reveal .table-bordered tbody td {
       font-size: .9em; }

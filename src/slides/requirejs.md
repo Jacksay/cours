@@ -1,8 +1,8 @@
-% REQUIREJS
-% Module Loader
+% ![RequireJS](../images/requirejs.png)
+% Javascript Module Loader
 % 2016
 
-# Présentation
+# Présentation{data-background="../images/illustrations/presentation.jpg"}
 
 ## C'est quoi RequireJS ?
 
@@ -10,11 +10,37 @@
 
 Il permet d'organiser et de charger dynamiquement le code Javascript pour **optimiser** son chargement.
 
+Il évite notamment ce type de code :
+```html
+<script src="js/jquery/dist/jquery.min.js"></script>
+<script src="js/underscore/underscore.min.js"></script>
+<script src="js/backbone/backbone.min.js"></script>
+<script src="js/handlebars/handlebars.min.js"></script>
+<script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/bootbox.js/bootbox.min.js"></script>
+<script src="js/moment/moment.min.js"></script>
+<script src="js/moment/MonApplication.js"></script>
+<script>
+var app = new MonApplication();
+</script>
+```
+
+---
+
+Pour obtenir ça :
+
+```html
+<script src="js/requirejs/require.js" data-main="js/main.js"></script>
+```
+
 ## Principe
 
-Quand on utilise RequireJS, parties de l'application ne vont contenir que le chargement de la librairie **RequireJS** et la configuration.
+On va définir dans un fichier de configuration l'emplacement des fichiers javascript ainsi que leurs dépendances.
 
-Ensuite, les appels du code provoqueront le chargement des fichiers Javascript necessaire à son fonctionnement.
+Ensuite, les appels du code provoqueront le chargement des fichiers Javascript necessaires.
+
+Si des librairies ne sont pas necessaires immédiatement, elles ne seront pas chargées
+
 
 ## Installation
 
@@ -22,11 +48,16 @@ Les sources sont disponibles sur le site officiel : [RequireJS.org](http://requi
 
 On peut également utiliser des gestionnaires de paquet comme **Bower** ou **NPM**.
 
+```bash
+bower install requirejs
+```
+
 Ensuite on utilise la balise `script` pour charger le code de **RequireJS** :
 
 ```html
-<script src="path/to/require.js"></script>
+<script src="chemin/vers/require.js"></script>
 ```
+
 
 ## Usage simple : basique
 
@@ -43,8 +74,21 @@ Exemple de contenu :
 
 ```javascript
 // fichier1.js
-console.log('Je suis fichier1.js !');
+console.log('Execution du contenu de fichier1.js !');
 ```
+
+
+## Usage simple dérivé
+
+On peut aussi utiliser RequireJS pour charger des données JSON locales :
+
+```javascript
+// Exemple de chargement de fichier
+requirejs(['datas.json'], function(data){
+  console.log('Les données sont chargées', data);
+});
+```
+
 
 ## Usage simple : plusieurs fichiers
 
@@ -61,16 +105,24 @@ La *callback* ne sera exécutée que lorsque les 2 fichiers seront chargés, a n
 
 ## Pas de .js
 
-La présence de l'extension **.js** est facultative.
+La présence de l'extension **.js** est facultative :
 
-# Configuration
+```javascript
+// Exemple de chargement de plusieurs fichiers
+requirejs(['fichier1', 'fichier2'], function(){
+  console.log('fichier1 et 2 sont chargés!');
+});
+```
+
+
+# Configuration{data-background="../images/illustrations/configuration.jpg"}
 
 ## Principe
 
 La configuration permet de préciser à **RequireJS** :
 
  * L'emplacement des fichiers JS
- * Les modules
+ * Les modules (alias et emplacement)
  * Les dépendances
 
 ```javascript
@@ -89,9 +141,12 @@ requirejs.config({
 });
 ```
 
+Maintenant, par défaut, les fichiers chargés le seront depuis le dossier **js/**.
+
+
 ## Déclarer des emplacements avec paths
 
-La propriété **paths** permet de déclarer des emplacements prédéfinis :
+La propriété **paths** permet de déclarer les alias et l'emplacement des fichiers :
 
 ```javascript
 requirejs.config({
@@ -109,7 +164,7 @@ requirejs.config({
 });
 ```
 
-Ensuite une simple `requirejs(['scriptX'], ...)` permettra de charger un fichier.
+Ensuite une simple `requirejs(['scriptX'], ...)` permettra de charger le fichier.
 
 ## Dépendances avec shim
 
@@ -124,9 +179,11 @@ requirejs.config({
     script3: "app/script3",
   },
   shim: {
+    // script3 a besoin de script1
     script3: {
       deps: ['script1']
     },
+    // script 1 a besoin de script2
     script1: {
       deps: ['script2']
     }
@@ -134,9 +191,34 @@ requirejs.config({
 });
 ```
 
-**RequireJS** chargera les dépendances avant.
+**RequireJS** se chargera d'inclure les dépendances necessaires automatiquement.
 
-# Modules
+## data-main
+
+Dans le cadre d'application *single page*, on peut centraliser avec l'attribut ‘data-main‘ pour charger automatiquement un script une fois RequireJS chargé :
+
+```html
+<script src="chemin/vers/require.js" data-main="mon-application.js"></script>
+```
+
+## data-main : piège{data-background="../images/illustrations/trap.jpg"}
+
+L'utilisation de `data-main` **est asynchrone**,
+
+si d'autres balises `scripts` avec du code suivent cet appel, il est possbile que le code ne soit pas encore chargé lors de l'exécution.
+
+```html
+<script src="chemin/vers/require.js" data-main="mon-application.js"></script>
+<script>
+// ICI, il est possible que le contenu de data-main ne soit pas encore chargé
+</script>
+```
+
+Mieux vaut utiliser les dépendances.
+
+
+
+# Modules{data-background="../images/illustrations/module.jpg"}
 
 ## Principe
 
@@ -201,4 +283,35 @@ Il est également préférable d'encapluser la déclaration du module dans une f
     root.Script1 = Script1;
   }
 })(this);
+```
+
+# Examples
+
+## JQuery/Bootstrap/Bootbox
+
+Configuration et usage
+
+```javascript
+// js/app.js
+requirejs.config({
+   baseUrl: 'js',
+   paths: {
+      "jquery": "jquery/dist/jquery",
+      "bootstrap": "bootstrap/dist/js/bootstrap",
+      "bootbox": "bootbox.js/bootbox"
+   },
+   shim: {
+      bootstrap: { deps: ["jquery"] },
+      bootbox: { deps: ["bootstrap"] }
+   }
+});
+
+require(['jquery'], function(){
+   $('#example').on('click', function(){
+      // Bootbox et bootstrap ne seront chargés que au click
+      require(['bootbox'], function(bootbox){
+         bootbox.alert("Démonstration !");
+      });
+   });
+});
 ```
