@@ -30,13 +30,13 @@ A partir d'un CDN :
 
 En utilisant **npm** :
 
-```
+```bash
 npm install vue
 ```
 
 Ou en utilisant le gestionnaire de paquet **Bower** :
 
-```
+```bash
 bower install vue
 ```
 
@@ -68,7 +68,8 @@ new Vue({
 
 Pas très interactif...
 
-## Data binding
+## Afficher des données
+
 
 ```html
 <div id="app">
@@ -86,7 +87,7 @@ new Vue({
 });
 ```
 
-VueJS gère automatiquement le **data binding** des données qui **doivent être décarées** préalablement dans `data`.
+VueJS gère automatiquement les données qui **doivent être décarées** préalablement dans `data`.
 
 Le langage de *template* est de type *Mustache*.
 
@@ -308,7 +309,7 @@ new Vue({
 
  - `v-show` qui va gérer l'affichage conditionnel,
  - `v-if` alternatif à `v-show`,
- - `v-else` qui va gérer l'affichage si `v-show` ou `v-if` est `false`
+ - `v-else` qui va gérer l'affichage si `v-if` est `false`
 
 ## v-show
 
