@@ -113,3 +113,17 @@ console.log(foo() === 1); // true
 }
 console.log(foo() === 1); // true
 ```
+
+# Promesses natives
+
+```javascript
+
+function faireQQC( duration = 2000 ){
+  return new Promise((resolve, reject) => {
+    setTimeout(()=>resolve(`resolve ! ${duration}`, duration));
+  })
+}
+
+
+
+```

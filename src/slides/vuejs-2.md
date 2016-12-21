@@ -2,11 +2,50 @@
 % Webapps
 % 2016
 
+# Transitions
+
+## Principe
+
+Les transitions sont un mécanisme de vuejs permettant d'ajouter automatiquement des classes à un élément lors de ces changements d'états.
+
+```html
+<div id="app">
+  <button @click="show = !show">Toogle</button>
+  <transition name="toto">
+    <h1 v-if="show">Super message</h1>
+  </transition>
+</div>
+```
+
+```css
+.toto-enter-active, .toto-leave-active {
+  transition: opacity .5s}
+.toto-enter, .toto-leave-active {
+  opacity: 0}
+```
+
+```javascript
+new Vue({
+  el: "#app",
+  data: {
+    show: true
+  }
+});
+```
+
+
+
 # Composants
 
 # Template
 
 # Directives personnalisées
+
+## Nouvelles
+
+## Hook
+
+# Mixins
 
 # Effets
 
