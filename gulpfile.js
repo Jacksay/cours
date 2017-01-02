@@ -19,13 +19,13 @@ gulp.task('styles', ['copy-fonts','copy-images','copy-libs'], function() {
 
 // FONTS
 gulp.task('prepare', function(){
-    gulp.src('src/slides/favicon.png')
-        .pipe(gulp.dest(destination + 'slides/'));
-gulp.src('src/cours/favicon.png')
-        .pipe(gulp.dest(destination + 'cours/'));
+   gulp.src('src/slides/favicon.png')
+         .pipe(gulp.dest(destination + 'slides/'));
+   gulp.src('src/cours/favicon.png')
+         .pipe(gulp.dest(destination + 'cours/'));
 });
 
-//
+// FONTS
 gulp.task('copy-fonts', function(){
     gulp.src('src/css/fonts/**.ttf')
         .pipe(gulp.dest(destination + 'css/fonts/'));
@@ -74,12 +74,6 @@ gulp.task('compile-slide', ['prepare','styles'], function() {
                 }
             }
         }));
-});
-
-
-
-gulp.task('echo', function() {
-    console.log("TOTO");
 });
 
 gulp.task('watch', function() {
