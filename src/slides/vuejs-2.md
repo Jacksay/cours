@@ -1,15 +1,53 @@
-% ![VueJS](../images/vuejs.png)<br>
-% Vue.js
+% VUEJS
+% Webapps
 % 2016
 
-# Introduction
+# Transitions
 
-## Webapp
+## Principe
 
-## MVC
+Les transitions sont un mécanisme de vuejs permettant d'ajouter automatiquement des classes à un élément lors de ces changements d'états.
+
+```html
+<div id="app">
+  <button @click="show = !show">Toogle</button>
+  <transition name="toto">
+    <h1 v-if="show">Super message</h1>
+  </transition>
+</div>
+```
+
+```css
+.toto-enter-active, .toto-leave-active {
+  transition: opacity .5s}
+.toto-enter, .toto-leave-active {
+  opacity: 0}
+```
+
+```javascript
+new Vue({
+  el: "#app",
+  data: {
+    show: true
+  }
+});
+```
 
 
-# Installation
+
+# Composants
+
+# Template
+
+# Directives personnalisées
+
+## Nouvelles
+
+## Hook
+
+# Mixins
+
+# Effets
 
 ## Sources
 
@@ -595,82 +633,28 @@ new Vue({
 
 ## methods
 
-L'instance de vue permet de déclarer des logiques plus complexes via la clef `methods`. Elles vont servir à réaliser des traitements (par exemples suite à un événement)
+L'instance de vue permet de déclarer des logiques plus complexes via la clef `methods` :
 
 ```javascript
 new Vue({
   el: "#app",
-  data: { operande1: 1, operande2: 1, resultat: 1 },
+  data: {
+    texte: "C'est vraiment très interessant"
+  },
   methods: {
-    calculer: function(){
-      console.log("Calculer !");
-      this.resultat = this.operande1 * this.operande2;
-    }
+      poke: function(){
+          console.log('poke()');
+          return "POKE !";
+      }
   }
 });
 ```
 
 ```html
-<div id="app">
-  <input v-model="operande1"> x <input v-model="operande2">
-  <button @click="calculer">Calculer</button>
-  <h3>{{ resultat }}</h3>
+<div class="alert" v-bind="style">
+    <h1>{{ poke() }}</h1>
 </div>
 ```
-
-## méthode et performances
-
-Dans le cas précédent, on peut être tenté de réaliser la calcule automatiquement pour faire l'économie de la variable `resultat` et du bouton :
-
-```javascript
-new Vue({
-  el: "#app",
-  data: { operande1: 1, operande2: 1 },
-  methods: {
-    calculer: function(){
-      console.log("Calculer !");
-      return this.operande1 * this.operande2;
-    }
-  }
-});
-```
-
-```html
-<div id="app">
-  <input v-model="operande1"> x <input v-model="operande2">
-  <h3>{{ resultat }}</h3>
-</div>
-```
-
-Mais cela pose un problème de performance
-
-## Méthode et performance
-
-Quand un méthode est appellée dans une vue, elle sera exécutée systématiquement à chaque rendu :
-
-```javascript
-new Vue({
-  el: "#app",
-  data: { toto: "titi", operande1: 1, operande2: 1 },
-  methods: {
-    calculer: function(){
-      console.log("Calculer !");
-      return this.operande1 * this.operande2;
-    }
-  }
-});
-```
-
-```html
-<div id="app">
-  <input v-model="toto"><br>
-  <input v-model="operande1"> x <input v-model="operande2">
-  <h3>{{ calculer() }}</h3>
-</div>
-```
-
-Pour ce genre d'usage, mieux vaut s'orienter sur un **watcher** ou un **computed**.
-
 
 ## Méthode et this
 
@@ -683,13 +667,13 @@ new Vue({
     texte: "C'est vraiment très interessant"
   },
   methods: {
-    poke: function(){
-        this.debug('Appel de la méthode POKE()');
-        return "POKE : " + this.texte.toUpperCase();
-    },
-    debug: function(obj){
-        console.log(obj);
-    }
+      poke: function(){
+          this.debug('Appel de la méthode POKE()');
+          return "POKE : " + this.texte.toUpperCase();
+      },
+      debug: function(obj){
+          console.log(obj);
+      }
   }
 });
 ```
@@ -785,34 +769,11 @@ new Vue({
 });
 ```
 
-## Paramètre et objet event
-
-On peut également exécuter une méthode avec des paramètres, si l'objet event est requis, on peut utiliser la variables prédéfinit `$event` pour la transmettre à la méthode :
-
-```html
-<div id="app">
-  <ul>
-    <li @click="executeMethode('toto', $event)">TOTO</li>
-    <li @click="executeMethode('tata', $event)">TATA</li>
-  </ul>
-</div>
-```
-```javascript
-new Vue({
-  el: "#app",
-  data: { /* meh ! */ },
-  methods: {
-      executeMethode: function(param, e){
-          console.log(param, e)
-      }
-    }
-});
-```
 
 
 ## Les modifiers avec v-on
 
-La gestion des évenement intègre un système de **modifiers** qui permet d'automatiser certaines opérations récurentes.
+La gestion des évenement intère un système de **modifiers** qui permet d'automatiser certaines opérations récurentes.
 
  * prevent
  * stop
@@ -844,155 +805,16 @@ Permet de déclencher de la logique en capurant un événement de passage :
 
 ## v-on:event.once
 
-# Computed
+# Computed et Watchers
 
-## Principe
+## Présentation
 
-La clef **computed** permet de déclarer des propriétés calculée.
+Problème de performance avec les méthodes
 
-Ces propriétés seront calculées uniquement lors du première appel puis le **resultat est mises en cache**.
-
-Elles seront ensuite recalulculée **uniquement si elles font intervenir des propriétés qui ont changées**.
-
-## Calculée une seule fois
-
-Si une propriété caclulée ne fait pas intervenir de données, elle sera calculée une seule fois :
-
-```html
-<div id="app">
-  <p>Affichage 1 {{ proprieteCalculee }}</p>
-  <p>Affichage 2 {{ proprieteCalculee }}</p>
-</div>
-```
-```javascript
-new Vue({
-  el: "#app",
-  data: { /* meh ! */ },
-  computed: {
-      proprieteCalculee: function(e){
-          return Math.random();
-      }
-    }
-});
-```
-
-## Recalcule intelligent
-
-```html
-<div id="app">
-  <p>{{ operande1 }} x {{ operande2 }} = {{ resultat }}</p>
-  <p> operande1 :
-    <a href="#" @click="operande1--">-</a>
-    <a href="#" @click="operande1++">+</a>
-  </p>
-  <p> operande2 :
-    <a href="#" @click="operande2--">-</a>
-    <a href="#" @click="operande2++">+</a>
-  </p>
-  <p> Les deux :
-    <a href="#" @click="operande1--; operande2--">-</a>
-    <a href="#" @click="operande1++; operande2++">+</a>
-  </p>
-</div>
-```
-```javascript
-new Vue({
-  el: "#app",
-  data: {
-    operande1: 1,
-    operande2: 1
-  },
-  computed: {
-    resultat: function(e){
-      console.log('Recalcule');
-      return this.operande1 * this.operande2;
-    }
-  }
-});
-```
+## Computed, Bases
 
 ## Computed, Getter et Setter
 
-```html
-<div id="app">
-  <input type="text" v-model="firstname">
-  <input type="text" v-model="lastname">
-  <hr>
-  <input type="text" v-model="fullname">
-</div>
-```
-```javascript
-new Vue({
-  el: "#app",
-  data: { firstname: "Jean-Claude", lastname: "Dus" },
-  computed: {
-    fullname: {
-      get: function(){
-        return this.firstname +' ' +this.lastname;
-      },
-      set: function(val){
-        var splited = val.split(' ');
-        this.firstname = splited[0];
-        this.lastname = splited[1];
-      }
-    }
-  }
-});
-```
+## v-model
 
-# Watchers
-
-## Principe
-
-Les **watchers** sont utilisés pour écouter les données et déclencher des procédures spécifiques lors d'un changement.
-
-```javascript
-new Vue({
-  el: "#app",
-  data: {
-    prop1: "foo",
-    prop2: "bar"
-  },
-  watch: {
-    // surveillance de prop1
-    prop1: function( newValue, oldValue ){
-      this.debug("Prop2 = %s (Avant %s)", newValue, oldValue);
-    },
-    // surveillance de prop2
-    prop2: function( newValue, oldValue ){
-        this.debug("Prop2 = %s (Avant %s)", newValue, oldValue);
-    }
-  },
-  methods: {
-    // juste pour montrer un appel avec this
-    debug: function(){
-      console.debug.apply(console, arguments);
-    }
-  }
-});
-```
-
-
-## Exemples
-
-```html
-<div id="app">
-  <input type="text" v-model="firstname">
-  <input type="text" v-model="lastname">
-  <hr>
-  <input type="text" v-model="fullname">
-</div>
-```
-```javascript
-new Vue({
-  el: "#app",
-  data: {
-    message: localStorage.getItem('monMessage') || "Message par défaut"
-  },
-  watch: {
-    message: function( newValue ){
-      localStorage.setItem('monMessage', newValue);
-    }
-  }
-});
-```
+# Exemples

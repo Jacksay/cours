@@ -4,7 +4,7 @@ var gulp = require("gulp"),
     destination = "dist/";
 
 gulp.task('default', ['compile-slide', 'compile-cours'], function() {
-
+  gulp.run('watch');
 });
 
 //
