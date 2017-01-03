@@ -972,6 +972,23 @@ new Vue({
 });
 ```
 
+## Watcher API
+
+Si besoin, la méthode `$watch` d'une instance de VueJS permet d'écouter un modification depuis un code extérieur :
+
+```javascript
+var instanceVue = new Vue({
+  el: "#app",
+  data: {
+    prop1: "foo"
+  }
+});
+
+instanceVue.$watch('prop1', function(oldValue, newValue){
+   console.log(`prop1(${oldValue}) vaut maintenant ${newValue}`);
+});
+```
+
 
 ## Exemples
 
