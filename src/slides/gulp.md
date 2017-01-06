@@ -524,6 +524,48 @@ gulp.task('minicss', function(){
 <https://github.com/jonathanepollack/gulp-minify-css>
 
 
+## es6
+
+Conversion de l'ES6 en ES5 :
+
+```javascript
+// gulfile.js
+var gulp = require('gulp'),
+    babel = require('gulp-babel')
+    ;
+gulp.task("es6", function(){
+    gulp.src("src/js/*.js")
+      .pipe(babel({
+        presets: ['es2015'],
+        plugins: ["transform-es2015-modules-amd"]
+      }))
+      .pipe(gulp.dest('dist/js'));
+});		
+```
+
+
+## avec AMD
+
+Il suffit d'installer le module **babel-plugin-transform-es2015-modules-amd** :
+
+```bash
+npm install --save-dev babel-plugin-transform-es2015-modules-amd
+```
+Puis de configurer son utilisation dans la tache Gulp :
+
+```javascript
+gulp.task("es6", function(){
+    gulp.src("src/js/*.js")
+      .pipe(babel({
+        presets: ['es2015'],
+        plugins: ["transform-es2015-modules-amd"]
+      }))
+      .pipe(gulp.dest('dist/js'));
+});
+```
+
+NOTE : Le plugin prend en charger le fichier de configuration **.babelrc** si il existe.
+
 ## gulp-handlebars
 
 Compilation des fichiers Handlebars.

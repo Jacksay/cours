@@ -2,36 +2,9 @@
 % Webapps
 % 2016
 
-# Transitions
 
-## Principe
+# Template
 
-Les transitions sont un mécanisme de vuejs permettant d'ajouter automatiquement des classes à un élément lors de ces changements d'états.
-
-```html
-<div id="app">
-  <button @click="show = !show">Toogle</button>
-  <transition name="toto">
-    <h1 v-if="show">Super message</h1>
-  </transition>
-</div>
-```
-
-```css
-.toto-enter-active, .toto-leave-active {
-  transition: opacity .5s}
-.toto-enter, .toto-leave-active {
-  opacity: 0}
-```
-
-```javascript
-new Vue({
-  el: "#app",
-  data: {
-    show: true
-  }
-});
-```
 
 # Composants
 
@@ -173,7 +146,9 @@ new Vue({
 </div>
 ```
 
-## Transmettre des données
+## props : Transmettre des données
+
+La clef **props** permet de configurer les clefs pour les données entrantes.
 
 ```javascript
 Vue.component('mon-composant', {
@@ -189,6 +164,8 @@ new Vue({
 })
 ```
 
+Dans cet exemple, 2 proprétés sont déclarées : message et extra
+
 ```html
 <div id="app">
   <mon-composant v-bind:extra="info" message="Message 1"></mon-composant>
@@ -198,15 +175,115 @@ new Vue({
 </div>
 ```
 
+Cette information est **unidirectionnelle**.
 
-# Template
+## props : validation
+
+La propriété **props** permet également de configurer le typage des données reçues :
+
+```javascript
+Vue.component('mon-composant', {
+  props: {
+      // Type (facultatif)
+      age: Number,
+
+      // Type mixte (facultatif)
+      code: [String, Number]
+
+      // Donnée requise
+      coef: {
+        type: Number,
+        required: true
+      },
+
+      // Donnée par défaut
+      prix: {
+        type: Number,
+        default: 9.99
+      }
+  }
+})
+```
+
+# Event API
+
+## Principe
+
+Pour garantir le découplage des vues entre elles, VueJS intègre dans les Vues et les composants le modèle *Observer* :
+
+ - `instance.on(event, callback)` pour écouter,
+ - `instance.emit(event)` pour diffuser,
+
+On peut également utiliser la directive `v-on:event` dans les *template*
+
+
 
 # Directives personnalisées
 
-## Nouvelles
+## Principe
+
+VueJS permet de déclarer ces propres directives (à l'instars de v-show ou v-model).
+
+## Globales
+
+```javascript
+Vue.directive('jeanclaudifier', {
+    inserted: function(el){
+      el.innerHTML = "Jean-Claudifié";
+    }
+});
+```
+
+```html
+<div id="app">
+  <strong v-jeanclaudifier>Pas JC</strong>
+</div>
+```
 
 # Lifecycle Hooks
 
+
 # Mixins
+
+
+# Transitions
+
+## Principe
+
+Les transitions sont un mécanisme de vuejs permettant d'ajouter automatiquement des classes à un élément lors de ces changements d'états avec `v-if` ou `v-show`.
+
+```html
+<div id="app">
+  <button @click="show = !show">Toogle</button>
+  <transition name="toto">
+    <h1 v-if="show">Super message</h1>
+  </transition>
+</div>
+```
+
+```css
+/** Quand la disparition/apparition est active */
+.toto-enter-active, .toto-leave-active {
+  transition: opacity .5s}
+.toto-enter, .toto-leave {
+  opacity: 0}
+```
+
+```javascript
+new Vue({
+  el: "#app",
+  data: {
+    show: true
+  }
+});
+```
+
+## switch
+
+## Enchaînement
+
+## Listes
+
+## Par programmation (jQuery)
 
 # Effets

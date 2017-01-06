@@ -404,6 +404,82 @@ Permet de gérer un alternative à `v-show` ou `v-if` :
 La directive `v-else-if="expression"` permet de gérer des conditions plus complexe.
 
 
+# Filtres
+
+## Base
+
+Les filtres sont utilisés pour réaliser des traitements sur les données avant qu'elles ne soient affichées dans le template :
+
+```javascript
+// Affiche le contenu en capital
+Vue.filter('capitalize', function(value){
+  return value.toUpperCase();
+});
+```
+
+```html
+<div id="app">
+  <h1>{{ titre | capitalize }}</h1>  
+</div>
+```
+
+Les filtres **ne permettent pas de retourner du code HTML**.
+
+## Traitements chaînés
+
+On peut chaîner les filtres en utilisant un *pipe* :  
+```javascript
+// Affiche le contenu en capital
+Vue.filter('capitalize', function(value){
+  return value.toUpperCase();
+});
+
+// Affiche le contenu à l'envers
+Vue.filter('reverse', function(value){
+  return value.split(''.reverse().join());
+});
+```
+
+```html
+<div id="app">
+  <h1>{{ titre | capitalize | reverse }}</h1>  
+</div>
+```
+
+## Traitement pour l'affichage
+
+Les filtres sont utilisés pour réaliser des traitements sur les données avant qu'elles ne soient affichées dans le template :
+
+```javascript
+// Affiche le contenu en capital
+Vue.filter('capitalize', function(value){
+  return value.toUpperCase();
+});
+```
+
+```html
+<div id="app">
+  <h1>{{ titre | capitalize }}</h1>  
+</div>
+```
+
+## paramètres
+
+Si besoin, on peut transmettre des paramètres à un filtre :
+
+```javascript
+Vue.filter('kikoolol', function(value, prefixe, sufixe){
+  return (prefixe || "Kikoo, ") + value + ( sufixe || " LOL" );
+});
+```
+
+```html
+<div id="app">
+  <h1>{{ 'tu pe liker ma video ???' | kikoolol }}</h1>  
+</div>
+```
+
+
 # Données itérables
 
 ## v-for : entier

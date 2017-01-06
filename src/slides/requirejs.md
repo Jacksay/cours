@@ -78,18 +78,6 @@ console.log('Execution du contenu de fichier1.js !');
 ```
 
 
-## Usage simple dérivé
-
-On peut aussi utiliser RequireJS pour charger des données JSON locales :
-
-```javascript
-// Exemple de chargement de fichier
-requirejs(['datas.json'], function(data){
-  console.log('Les données sont chargées', data);
-});
-```
-
-
 ## Usage simple : plusieurs fichiers
 
 La fonction `requirejs` permet de spécifier en premier argument **plusieurs fichiers** à charger :
@@ -164,7 +152,7 @@ requirejs.config({
 });
 ```
 
-Ensuite une simple `requirejs(['scriptX'], ...)` permettra de charger le fichier.
+Ensuite un simple `requirejs(['scriptX'], ...)` permettra de charger le fichier.
 
 ## Dépendances avec shim
 
@@ -226,7 +214,7 @@ Le code javascript est rarement actif explicitement dans un fichier, il est char
 
 Il est donc préférable d'utiliser les modules.
 
-## Déclarer un module
+## Déclarer un module (format AMD)
 
 La fonction `define(callback)` prend en paramètre un fonction callback qui devra retourner le module
 à charger :
@@ -286,6 +274,51 @@ Il est également préférable d'encapluser la déclaration du module dans une f
 ```
 
 # Examples
+
+## Le module TEXT
+
+Le module text <https://github.com/requirejs/text> de requirejs permet de charger des fichiers texte, par exemple pour gérer les templates externalisés :
+
+```javascript
+requirejs.config({
+  // ...
+  paths: {
+    // Emplacement du module
+    'text': 'path/to/requirejs-text/text'
+  }
+});
+```
+
+puis :
+
+```javascript
+requirejs(['text!monfichier.txt'], function(contenuDuFichier){
+  console.log('le fichier monfichier.txt contient : ' + contenuDuFichier);
+})
+```
+
+## Le module JSON
+
+Le module text <https://github.com/requirejs/json> de requirejs permet de charger des fichiers JSON :
+
+```javascript
+requirejs.config({
+  // ...
+  paths: {
+    // Emplacement du module
+    'json': 'path/to/requirejs-json/json'
+  }
+});
+```
+
+puis :
+
+```javascript
+requirejs(['json!monfichier.json'], function(json){
+  console.log('Données JSON : ' + json);
+})
+```
+
 
 ## JQuery/Bootstrap/Bootbox
 
