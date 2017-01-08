@@ -7,14 +7,14 @@
 
 ## Présentation
 
-Dans le cadre du développement de *Single page application*, **VueRouter** permet de gérer : 
+Dans le cadre du développement de *Single page application*, **VueRouter** permet de gérer :
 
 - La vue affichée en fonction de la *route*
 - De gérer la navigation
 
 ## Installation
 
-VueRouter se présente sous la forme d'un fichier javascript à inclure dans son projet :
+VueRouter se présente sous la forme d'un fichier javascript (<http://router.vuejs.org/>) à inclure dans son projet :
 
 ```html
 <script src="path/to/vue.js"></script>
@@ -24,303 +24,208 @@ VueRouter se présente sous la forme d'un fichier javascript à inclure dans son
 Puis on demande à VueJS d'utiliser VueRouter :
 
 ```javascript
+// Activation de VueRouter
 Vue.use(VueRouter);
 ```
 
 That's all folk
 
+# Base
 
-# Composants
+## Déclarer les routes
 
-## Présentation
-
-Les **composants** sont une des fonctionnalités les plus puissantes dans VueJS. Ils permettent de mieux structurer son code en isolant une partie d'une vue pour la réutiliser.
-
-## Déclaration
-
-On commence par déclarer le composant :
+On commence par associer à une route un composant à utiliser pour le rendu :
 
 ```javascript
-// Déclaration globale du composant
-Vue.component('mon-composant', {
-  // Options
-  template: '<h1>Mon Composant !</h1>'
-})
+// Composants
+var Accueil = { template: "<h1>Page d'accueil</h1>"};
+var Liste = { template: "<h1>Liste</h1>"}
 
-new Vue({
-  el: '#app'
-})
-```
-
-Puis pour l'utiliser :
-
-```html
-<div id="app">
-  <my-component></my-component>
-</div>
-```
-
-## Déclaration locale
-
-On peut également, dans un soucis de réutilisabilité, décomposer la déclaration du composant pour un
-usage local :
-
-```javascript
-// Composant "générique"
-var MonComposant = {
-  template: '<h1>Mon Composant !</h1>'
-};
-
-// Affectation à la vue
-new Vue({
-  components: {
-    'mon-composant' : MonComposant
-  }
-})
-```
-
-Ce mécanisme permet de se prémunir de certains conflits de nommage comme le ferai un espace de nom.
-
-## Wrapper avec is
-
-L'attribut `is` permet de choisir un tag racine spécifique pour répondre favorablement au impératif structurel du HTML :
-
-```html
-<section id="app">
-  <article is="mon-composant"></article>
-</section>
-```
-
-Ou encore :
-
-```html
-<div id="app">
-  <h2>Mes personnages</h2>
-  <ul>
-    <li is="mon-composant"></li>
-  </ul>
-</div>
-```
-
-## data
-
-Les composants disposent également d'une propriété `data` pour gérer ces propres données, intuitivement, le code suivant semble correct, **C'est faux !** :
-
-```javascript
-Vue.component('mon-composant', {
-  template: '<button v-on:click="compteur += 1">{{ compteur }}</button>',
-  data: {
-    compteur: 0
-  }
-})
-
-new Vue({
-  el: '#app'
-})
-```
-
-```html
-<div id="app">
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-</div>
-```
-
-## data function
-
-VueJS impose l'utilisation d'une fonction pour gérer les données d'un composant, cela afin d'éviter les confusions de pointeur :
-
-```javascript
-Vue.component('mon-composant', {
-  template: '<button v-on:click="compteur += 1">{{ compteur }}</button>',
-  data: function(){
-    return {
-      compteur: 0
-    }
-  }
-})
-
-new Vue({
-  el: '#app'
-})
-```
-
-```html
-<div id="app">
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-</div>
-```
-
-## data commune
-
-Dans l'exemple précédent, si l'on voulait *brancher* les composants sur la même source, il faut que la fonction data retourne le même pointeur :
-
-```javascript
-var compteurCommun {
-  compteur: 0
-};
-
-Vue.component('mon-composant', {
-  template: '<button v-on:click="compteur += 1">{{ compteur }}</button>',
-  data: function(){
-    return compteurCommun;
-  }
-})
-
-new Vue({
-  el: '#app'
-})
-```
-
-```html
-<div id="app">
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-</div>
-```
-
-## props : Transmettre des données
-
-La clef **props** permet de configurer les clefs pour les données entrantes.
-
-```javascript
-Vue.component('mon-composant', {
-  template: '<h1>{{ message }}({{ extra }})</h1>',
-  props: ['message', 'extra']
-})
-
-new Vue({
-  el: '#app',
-  data: {
-    info: "Exemple"
-  }
-})
-```
-
-Dans cet exemple, 2 proprétés sont déclarées : message et extra
-
-```html
-<div id="app">
-  <mon-composant v-bind:extra="info" message="Message 1"></mon-composant>
-  <mon-composant v-bind:extra="info" message="Message 2"></mon-composant>
-  <mon-composant v-bind:extra="info" message="Message 3"></mon-composant>
-  <input v-model="info" />
-</div>
-```
-
-Cette information est **unidirectionnelle**.
-
-## props : validation
-
-La propriété **props** permet également de configurer le typage des données reçues :
-
-```javascript
-Vue.component('mon-composant', {
-  props: {
-      // Type (facultatif)
-      age: Number,
-
-      // Type mixte (facultatif)
-      code: [String, Number]
-
-      // Donnée requise
-      coef: {
-        type: Number,
-        required: true
-      },
-
-      // Donnée par défaut
-      prix: {
-        type: Number,
-        default: 9.99
-      }
-  }
-})
-```
-
-# Event API
-
-## Principe
-
-Pour garantir le découplage des vues entre elles, VueJS intègre dans les Vues et les composants le modèle *Observer* :
-
- - `instance.on(event, callback)` pour écouter,
- - `instance.emit(event)` pour diffuser,
-
-On peut également utiliser la directive `v-on:event` dans les *template* (ce qui est l'usage courant)
-
-
-
-# Directives personnalisées
-
-## Principe
-
-VueJS permet de déclarer ces propres directives (à l'instars de v-show ou v-model).
-
-## Globales
-
-```javascript
-Vue.directive('jeanclaudifier', {
-    inserted: function(el){
-      el.innerHTML = "Jean-Claudifié";
-    }
+// Routes
+var router = new VueRouter({
+  routes: [
+      { path: "/", component: Accueil },
+      { path: "/personnages", component: Liste }
+  ]
 });
-```
 
-```html
-<div id="app">
-  <strong v-jeanclaudifier>Pas JC</strong>
-</div>
-```
-
-# Lifecycle Hooks
-
-
-# Mixins
-
-
-# Transitions
-
-## Principe
-
-Les transitions sont un mécanisme de vuejs permettant d'ajouter automatiquement des classes à un élément lors de ces changements d'états avec `v-if` ou `v-show`.
-
-```html
-<div id="app">
-  <button @click="show = !show">Toogle</button>
-  <transition name="toto">
-    <h1 v-if="show">Super message</h1>
-  </transition>
-</div>
-```
-
-```css
-/** Quand la disparition/apparition est active */
-.toto-enter-active, .toto-leave-active {
-  transition: opacity .5s}
-.toto-enter, .toto-leave {
-  opacity: 0}
-```
-
-```javascript
-new Vue({
+// Application
+var application = new Vue({
   el: "#app",
-  data: {
-    show: true
-  }
+  router: router
+})
+```
+
+## Dans l'application
+
+Dans le template, VueRouter propose un composant dédié à l'affichage des composants *routés* : `router-view` :
+
+```html
+<div id="app">
+  <h1>Mon Application</h1>
+  <router-vie></router-view>
+</div>
+```
+
+On peut ensuite utiliser l'URL pour basculer l'affichage des composants dans la `router-view`.
+
+## router-link
+
+**VueRouter** introduit également un composant **router-link** permettant de créer des liens de navigation, ce composant ajoute automatiquement une classe CSS `router-link-active` si l'URL affichée correspond au lien :
+
+```html
+<div id="app">
+  <h1>Mon Application</h1>
+  <nav>
+    <router-link to="/">Accueil</router-link>
+    <router-link to="/personnages">Liste</router-link>
+  </nav>
+  <router-vie></router-view>
+</div>
+```
+
+## router-link tag
+
+Le composant **router-link** a un attribut `tag` pour spécifier la balise à utiliser :
+
+```html
+<div id="app">
+  <h1>Mon Application</h1>
+  <nav>
+    <router-link to="/" tag="button">Accueil</router-link>
+    <router-link to="/personnages" tag="button">Liste</router-link>
+  </nav>
+  <router-vie></router-view>
+</div>
+```
+
+## name
+
+Les changements de format des URL necessitera de mettre à jour les templates. Mais on peut utiliser des **routes nommées** :
+
+```javascript
+// Routes
+var router = new VueRouter({
+  routes: [
+      { path: "/", component: Accueil, name="accueil" },
+      { path: "/personnages", component: Liste, name="liste" }
+  ]
 });
 ```
 
-## switch
+Puis dans les templates :
 
-## Enchaînement
+```html
+<div id="app">
+  <h1>Mon Application</h1>
+  <nav>
+    <router-link :to="{ name: 'accueil' }" tag="button">Accueil</router-link>
+    <router-link :to="{ name: 'liste' }" tag="button">Liste</router-link>
+  </nav>
+  <router-vie></router-view>
+</div>
+```
 
-## Listes
+# Zonage
 
-## Par programmation (jQuery)
+## Route à plusieurs composants
 
-# Effets
+DEMO
+
+# Routes dynamiques
+
+## Paramètres d'URL
+
+On peut également créer des URL dynamiques avec des paramètres :
+
+```javascript
+var Fiche = { template: "<h1>FICHE</h1>"};
+
+// Routes
+var router = new VueRouter({
+  routes: [
+      // ...
+      { path: "/personnage/:id", component: Fiche }
+  ]
+});
+```
+
+Exemple d'URL : `#/personnage/1`
+
+## Récupérer le paramètre
+
+On peut ensuite récupérer les paramètres dans le *template* du composant avec la clef `$route.params` :
+
+```javascript
+var Fiche = { template: "<div>"
+  + "<h1>FICHE</h1>"
+  + "<p>ID = {{ $route.params.id }}</p>"
+  + "</div>"};
+
+// Routes
+var router = new VueRouter({
+  routes: [
+      // ...
+      { path: "/personnage/:id", component: Fiche }
+  ]
+});
+```
+
+## router-link et paramètres
+
+Pour les routers link, on utilisera les routes nommées pour affecter des paramètres :
+
+```html
+<div id="app">
+  <h1>Mon Application</h1>
+  <nav>
+    <router-link :to="{ name: 'accueil', params: { id: 1} }" tag="button">Fiche 1</router-link>
+    <router-link :to="{ name: 'accueil', params: { id: 2} }" tag="button">Fiche 2</router-link>
+  </nav>
+  <router-vie></router-view>
+</div>
+```
+
+## watch
+
+Astuce : On peut surveiller au sein d'un composant les changements d'URL en utilisant un *watcher* sur la clef `$route` :
+
+```javascript
+//
+var Fiche = {
+  template: "<div>"
+    + "<h1>FICHE</h1>"
+    + "<p>ID = {{ $route.params.id }}</p>"
+    + "</div>"},
+  watch: {
+    '$route': function(nouvelle, ancienne){
+      console.log('La route a changé');
+      console.log('Nouvelle', nouvelle);
+      console.log('Ancienne', ancienne);
+    }
+  }  
+
+```
+
+# Route hiérarchique
+
+##
+
+On peut décliner des URL avec des URL enfants :
+
+```javascript
+// Routes
+var router = new VueRouter({
+  routes: [
+      // ...
+      {
+        path: "/personnages",
+        component: Liste,
+        children: [
+          path: "/:id",
+          component: Fiche
+        ]
+      }
+  ]
+});
+```
