@@ -1,9 +1,34 @@
-% VUEJS
+% VUE ROUTER
 % Webapps
-% 2016
+% 2017
 
 
-# Template
+# Introduction
+
+## Présentation
+
+Dans le cadre du développement de *Single page application*, **VueRouter** permet de gérer : 
+
+- La vue affichée en fonction de la *route*
+- De gérer la navigation
+
+## Installation
+
+VueRouter se présente sous la forme d'un fichier javascript à inclure dans son projet :
+
+```html
+<script src="path/to/vue.js"></script>
+<script src="path/to/vue-router.js"></script>
+```
+
+Puis on demande à VueJS d'utiliser VueRouter :
+
+```javascript
+Vue.use(VueRouter);
+```
+
+That's all folk
+
 
 # Composants
 
@@ -256,6 +281,7 @@ Vue.directive('jeanclaudifier', {
 
 
 # Mixins
+
 
 # Transitions
 
