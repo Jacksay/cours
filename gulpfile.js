@@ -33,7 +33,7 @@ gulp.task('copy-fonts', function(){
 
 //
 gulp.task('copy-images', function(){
-    gulp.src('src/images/**')
+    gulp.src('src/images/**/*')
         .pipe(gulp.dest(destination + 'images/'));
 });
 
@@ -44,7 +44,20 @@ gulp.task('copy-libs', function() {
 });
 
 
-
+gulp.task('compile-index', ['prepare', 'styles'], function() {
+    gulp.src('src/*.md', {
+        read: false
+    })
+        .pipe(shell([
+            'pandoc --template=src/tpl/template-index.html -s -i -t html5 <%= file.path %> -o <%= f(file.path) %>',
+        ], {
+            templateData: {
+                f: function(s) {
+                    return s.replace(/\.md/, '.html').replace(/\/src\//, '/dist/');
+                }
+            }
+        }));
+});
 
 gulp.task('compile-cours', ['prepare', 'styles'], function() {
     gulp.src('src/cours/**/*.md', {
