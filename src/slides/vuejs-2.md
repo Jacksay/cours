@@ -209,6 +209,56 @@ new Vue({
 
 Ce mécanisme permet de se prémunir de certains conflits de nommage comme le ferai un espace de nom.
 
+## Slot
+
+Dans la vue, le composant implanté peux avoir un contenu : 
+
+```html
+<div id="app">
+  <my-component>Contenu dans le composant</my-component>
+</div>
+```
+
+On utilisera ensuite dans le template un **slot** pour injecter ce contenu dans le composant, le **slot** peut avoir un contenu par défaut : 
+
+```javascript
+// Déclaration globale du composant
+Vue.component('mon-composant', {
+  template: '<div><h1>Mon Composant !</h1><slot>Contenu par défaut</slot></div>'
+})
+
+new Vue({el: "#app"})
+```
+
+## Slot nommés
+
+On peut imaginer des composants disposant de plusieurs **slot** : 
+
+```html
+<!-- Template du composant -->
+<div>
+    <header><slot name="header"><h1>Default header</h1></slot></header>
+    <div class="content"><slot><p>Default content</slot></div>
+    <footer><slot name="footer"><h1>Default footer</h1></slot></footer>
+</div>
+```
+
+puis à l'usage : 
+
+```html
+<div id="app">
+    <mon-composant>Contenu 1, le reste par défaut</mon-composant>
+    <mon-composant>
+      <template slot="header"><em>Super</em> titre</template>
+      Contenu du slot de base
+      <nav slot="footer"><a>previous</a></nav>
+     </mon-composant>
+</div>
+```
+
+Les binding seront par contre relatif à l'APP, pas le composant.
+
+
 ## Wrapper avec is
 
 L'attribut `is` permet de choisir un tag racine spécifique pour répondre favorablement au impératif structurel du HTML :
@@ -229,6 +279,8 @@ Ou encore :
   </ul>
 </div>
 ```
+
+
 
 ## data
 
