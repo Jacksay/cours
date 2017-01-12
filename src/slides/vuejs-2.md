@@ -3,6 +3,62 @@
 % 2016
 
 
+# Gestion des templates
+
+## template basique
+
+Par défaut, **VueJS** utilise comme base pour le *template* le code présent dans l'élément spécifié dans la propriété `el` : 
+
+```html
+<div id="#app">
+  Je suis le template
+</div>
+```
+
+```javascript
+new Vue({
+  el: '#app'
+});
+```
+
+## template inline
+
+L'instance de **Vue** propose également une propriété `template` permettant de spécifier directement la chaîne de *template* à utiliser : 
+
+```javascript
+new Vue({
+  el: "#app",
+  template: '<div>Message : {{ message }}</div>',
+  data: {
+    message: "Bonjour monde"
+  }
+});
+```
+
+## template cible
+
+On peut également utiliser un selecteur pour indiquer à VueJS l'emplacement template dans le DOM.
+
+```javascript
+new Vue({
+  el: '#app',
+  template: "#template-app"
+})
+```
+
+On utilise généralement une balise `script` avec un type `text/x-template` : 
+
+```html
+<div id="app"></div>
+<script id="template-app" type="text/x-template">
+  <article>
+    <h1>Mon super template</h1>
+    <p>{{ description }}</p>
+  </article>
+</script>
+```
+
+
 # L'instance de Vue
 
 ## Proxy
@@ -71,38 +127,6 @@ var instance = new Vue({
 
 Voir pour plus de détails : <https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram>
 
-
-## Template : live
-
-Par défaut, **VueJS** utilise comme gabarit pour le rendu le contenu de l'élément précisé dans `el`, mais on peut utiliser la propriété `template` pour définir un gabarit directement : 
-
-```javascript
-new Vue({
-  el: "#app",
-  template: "<h1>Ma super application</h1>"
-})
-```
-
-## Template : x-template
-
-Si on indique à la propriété `template` un selecteur, VueJS utilisera le contenu de cet élément comme gabarit. On utilise généralement une balise `script` avec un type `text/x-template` : 
-
-```javascript
-new Vue({
-  el: "#app",
-  template: "#template-app"
-})
-```
-
-```html
-<div id="app"></div>
-<script id="template-app" type="text/x-template">
-  <article>
-    <h1>Mon super template</h1>
-    <p>{{ description }}</p>
-  </article>
-</script>
-```
 
 ## el et mount
 
@@ -189,9 +213,11 @@ Puis pour l'utiliser :
 </div>
 ```
 
+Dans cet exemple, le composant est directement attaché à la classe **Vue**, on parle de **déclaration globale**.
+
 ## Déclaration locale
 
-On peut également, si besoin, décomposer la déclaration du composant pour un usage local :
+On peut également, si besoin, décomposer la déclaration du composant, puis l'attacher à une vue, dans ce cas on parle de **déclaration locale** :
 
 ```javascript
 // Composant "générique"
@@ -284,32 +310,7 @@ Ou encore :
 
 ## data
 
-Les composants disposent également d'une propriété `data` pour gérer ces propres données, intuitivement, le code suivant semble correct, **C'est faux !** :
-
-```javascript
-Vue.component('mon-composant', {
-  template: '<button v-on:click="compteur += 1">{{ compteur }}</button>',
-  data: {
-    compteur: 0
-  }
-})
-
-new Vue({
-  el: '#app'
-})
-```
-
-```html
-<div id="app">
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-  <mon-composant></mon-composant>
-</div>
-```
-
-## data function
-
-VueJS impose l'utilisation d'une fonction pour gérer les données d'un composant, cela afin d'éviter les confusions de pointeur :
+Les composants disposent également d'une propriété `data` pour gérer ces propres données. Attention, **VueJS impose l'utilisation d'une fonction** éviter les **problèmes de pointeur** :
 
 ```javascript
 Vue.component('mon-composant', {
@@ -336,17 +337,17 @@ new Vue({
 
 ## data commune
 
-Dans l'exemple précédent, si l'on voulait *brancher* les composants sur la même source, il faut que la fonction data retourne le même pointeur :
+Dans l'exemple précédent, si l'on voulait *brancher* les composants sur la même source, il faut que la fonction data retourne le même pointeur, on parle de **Store** ou de **State partagés** :
 
 ```javascript
-var compteurCommun {
+var store {
   compteur: 0
 };
 
 Vue.component('mon-composant', {
   template: '<button v-on:click="compteur += 1">{{ compteur }}</button>',
   data: function(){
-    return compteurCommun;
+    return store;
   }
 })
 
@@ -365,7 +366,7 @@ new Vue({
 
 ## props : Transmettre des données
 
-La clef **props** permet de configurer les clefs pour les données entrantes.
+La clef **props** permet de configurer les clefs pour les données entrantes. La vue qui utilise le composant pourra ensuite transmettre des données au composant.
 
 ```javascript
 Vue.component('mon-composant', {
@@ -392,7 +393,9 @@ Dans cet exemple, 2 proprétés sont déclarées : message et extra
 </div>
 ```
 
-Cette information est **unidirectionnelle**.
+Cette information est **unidirectionnelle**. Si *info* est modifié dans la vue, il sera mis à jour dans les composants (mais pas l'inverse)
+
+## props
 
 ## props : validation
 
@@ -459,34 +462,6 @@ new Vue({
   }
 })
 ```
-
-## Bus
-
-## VueX
-
-# Directives personnalisées
-
-## Principe
-
-VueJS permet de déclarer ces propres directives (à l'instars de v-show ou v-model).
-
-## Globales
-
-```javascript
-Vue.directive('jeanclaudifier', {
-    inserted: function(el){
-      el.innerHTML = "Jean-Claudifié";
-    }
-});
-```
-
-```html
-<div id="app">
-  <strong v-jeanclaudifier>Pas JC</strong>
-</div>
-```
-
-# Mixins
 
 # Transitions
 
@@ -568,4 +543,28 @@ On peut utiliser un `mode` pour indiquer à VueJS comment il doit enchaîner les
 
 ## Par programmation (jQuery)
 
-# Effets
+# Annexe
+
+## Bus
+
+## Directives personnalisées
+
+VueJS permet de déclarer ces propres directives (à l'instars de v-show ou v-model).
+
+```javascript
+Vue.directive('jeanclaudifier', {
+    inserted: function(el){
+      el.innerHTML = "Jean-Claudifié";
+    }
+});
+```
+
+```html
+<div id="app">
+  <strong v-jeanclaudifier>Pas JC</strong>
+</div>
+```
+
+## Mixins
+
+TODO
