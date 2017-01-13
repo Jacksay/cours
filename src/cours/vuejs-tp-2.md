@@ -1,0 +1,78 @@
+% TP2
+% Webapp
+% 2017
+
+# Présentation
+
+A partir des fichier fournis, construire une interface graphique pour la gestion des données.
+
+L'archive contient :
+
+ - Un script serveur `server.php` proposant une API REST basique pour réaliser les tests
+ - Un fichier `index.html` qui contiendra l'interface (une partie du code est déjà en place)
+ - Un dossier `images` (emplacement où l'API enregistre les images)
+ - Un dossier `js` contenant les librairies
+
+Vous utiliserez [Vue-Resource](https://github.com/pagekit/vue-resource) pour gérer l'échange des données entre l'API et l'interface
+
+## Présentation de l'API fournie
+
+L'API se présente sous la forme d'un simple script PHP. C'est une application PHP développée pour les tests uniquement! Elle stoque les données dans le fichiers **datas.txt** et les images dans le dossier **images/**.
+
+Pour lancer l'API, utiliser le terminal, placez vous dans le dossier racine, puis lancez un *built-in server* PHP avec la commande :
+
+```
+# Lancer l'API de test
+php -S 127.0.0.1:8080 -t ./ server.php
+```
+Vous pouvez vérifier que le serveur fonctionne bien en testant l'adresse : <http://127.0.0.1:8080/produits/>. Toutes les transmissions reçues par le serveur sont affichées dans la sortie standard.
+
+Voici les points d'accès possibles :
+ - `[GET] http://127.0.0.1:8080/produits` Retourne la liste des produits
+ - `[POST] http://127.0.0.1:8080/produits` Envoi un nouveau produit à enregistrer
+ - `[PUT] http://127.0.0.1:8080/produits/:id` Envoi les modifications pour le produit :id
+ - `[DELETE] http://127.0.0.1:8080/produits/:id` Supprime le produit :id
+
+L'API ne réalise aucun contrôle sur les données soumises, elle ne sert que pour réaliser des tests.
+
+Vous pouvez remettre à zéro les données en copiant le fichier datas.dist.txt dans datas.txt
+
+```bash
+# Remettre les données initiale
+cp datas.dist.txt datas.txt
+```
+
+# Réalisation
+
+Vous devrez décomposer l'application avec au moins 2 composants, un pour gérer la liste des produits, un autre pour le formulaire.
+
+## Liste (Premier composant)
+
+Vous travaillez sur le fichier <http://127.0.0.1:8080/index.html> qui contient déjà une partie du code.
+
+Vous allez créer un premier composant. Ce composant aura en charge d'afficher une liste de produit. Dans l'ASIDE à gauche.
+
+Récupérer la liste des produits depuis l'API <http://127.0.0.1:8080/produits> et l'affichez sur la gauche. Les communications HTTP peuvent être gérées dans VueJS en utilisant le plugin [Vue-Resource](https://github.com/pagekit/vue-resource).
+
+Vous devez également gérer les éventuels retour d'erreur de l'API. Pour tester un retour d'erreur, utiliser l'URL <http://127.0.0.1:8080/produits/?error=404> (ou autre code d'erreur courant). Si vous affichez un encart d'erreur, pensez à laisser la possibilité à l'utilisateur de le fermer quand il en a pris connaissance. (Évitez les modales).
+
+
+## Nouveau / éditer
+
+En cliquant sur "Nouveau", un formulaire apparait dans la zone principale avec un formulaire permettant de créer un nouveau produit.
+
+<div class="alert alert-info">
+Vous pouvez dans un premier temps ignorer l'image qui vous demandera plus de temps
+</div>
+
+
+
+
+
+
+
+# Extra
+
+## Chargement
+
+Les opérations entre le serveur et le client peuvent parfois être longue, ajoutez dans l'application un écran de chargement pour témoigner de cette activité. pour vous aider, l'API `server.php` permet de configurer le temps de réponse de l'API en seconde (voir en début de fichier l'option `latence`).
