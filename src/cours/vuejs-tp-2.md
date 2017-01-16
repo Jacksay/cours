@@ -4,8 +4,11 @@
 
 # Présentation
 
+
 Les fichiers de départ sont disponibles à cette adresse :
 [Archive du TP N°2](../ressources/VueTP2.zip). A partir des fichier fournis, construire une interface graphique pour la gestion de produits.
+
+A partir des fichier fournis, construire une interface graphique pour la gestion des données.
 
 ![Exemple d'interface](../images/articles/interface.png)
 
@@ -37,8 +40,6 @@ Voici les points d'accès possibles :
  - `[PUT] http://127.0.0.1:8080/produits/:id` Envoi les modifications pour le produit :id, Retourne le produit à jour
  - `[DELETE] http://127.0.0.1:8080/produits/:id` Supprime le produit :id
 
-
-
 L'API ne réalise aucun contrôle sur les données soumises, elle ne sert que pour réaliser des tests.
 
 Vous pouvez remettre à zéro les données en copiant le fichier datas.dist.txt dans datas.txt
@@ -48,10 +49,11 @@ Vous pouvez remettre à zéro les données en copiant le fichier datas.dist.txt 
 cp datas.dist.txt datas.txt
 ```
 
+
+
 # Réalisation
 
 Vous devrez décomposer l'application avec au moins 2 composants, un pour gérer la liste des produits, un autre pour le formulaire. Essayez de centraliser les échanges entre l'interface et l'API dans l'instance de Vue principale.
-
 
 ## Liste (Premier composant)
 
@@ -116,3 +118,20 @@ Profitez en pour ajouter une vue "Fiche" permettant de voir une fiche pour le pr
 Dans un premier temps, assurez vous que le navigation fonctionne toujours en partant de la liste.
 
 Ensuite essayer de faire fonctionner l'écran d'édition/fiche au rechargement complet de la page. Cette étape peut s'avérer plus délicate que le autres.
+=======
+Vous devez également gérer les éventuels retour d'erreur de l'API. Pour tester un retour d'erreur, utiliser l'URL <http://127.0.0.1:8080/produits/?error=404> (ou autre code d'erreur courant). Si vous affichez un encart d'erreur, pensez à laisser la possibilité à l'utilisateur de le fermer quand il en a pris connaissance. (Évitez les modales).
+
+
+## Nouveau / éditer
+
+En cliquant sur "Nouveau", un formulaire apparait dans la zone principale avec un formulaire permettant de créer un nouveau produit.
+
+<div class="alert alert-info">
+Vous pouvez dans un premier temps ignorer l'image qui vous demandera plus de temps
+</div>
+
+# Extra
+
+## Chargement
+
+Les opérations entre le serveur et le client peuvent parfois être longue, ajoutez dans l'application un écran de chargement pour témoigner de cette activité. pour vous aider, l'API `server.php` permet de configurer le temps de réponse de l'API en seconde (voir en début de fichier l'option `latence`).
