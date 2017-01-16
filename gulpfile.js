@@ -3,12 +3,12 @@ var gulp = require("gulp"),
     watch = require('gulp-watch'),
     destination = "dist/";
 
-gulp.task('default', ['compile-slide', 'compile-cours'], function() {
-  gulp.run('watch');
+gulp.task('default', ['watch', 'compile-slide', 'compile-cours', 'compile-index'], function() {
+
 });
 
 //
-gulp.task('styles', ['copy-fonts','copy-images','copy-libs'], function() {
+gulp.task('styles', ['copy-fonts','copy-images','copy-libs', 'copy-ressources'], function() {
     gulp.src('src/css/images/**.*')
         .pipe(gulp.dest(destination + 'css/images/'));
     gulp.src('src/css/fontello/**/*.*')
@@ -35,6 +35,11 @@ gulp.task('copy-fonts', function(){
 gulp.task('copy-images', function(){
     gulp.src('src/images/**/*')
         .pipe(gulp.dest(destination + 'images/'));
+});
+
+gulp.task('copy-ressources', function(){
+    gulp.src('src/ressources/**/*')
+        .pipe(gulp.dest(destination + 'ressources/'));
 });
 
 //
@@ -90,7 +95,7 @@ gulp.task('compile-slide', ['prepare','styles'], function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/**/*.md', ['compile-cours', 'compile-slide']);
+    gulp.watch('src/**/*.md', ['compile-cours', 'compile-slide', 'compile-index']);
     gulp.watch('src/**/*.css', ['styles']);
-    gulp.watch('src/tpl/*.html', ['compile-cours', 'compile-slide']);
+    gulp.watch('src/tpl/*.html', ['compile-cours', 'compile-slide', 'compile-index']);
 });

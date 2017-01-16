@@ -7,7 +7,7 @@
 
 ## template basique
 
-Par défaut, **VueJS** utilise comme base pour le *template* le code présent dans l'élément spécifié dans la propriété `el` : 
+Par défaut, **VueJS** utilise comme base pour le *template* le code présent dans l'élément spécifié dans la propriété `el` :
 
 ```html
 <div id="#app">
@@ -23,7 +23,7 @@ new Vue({
 
 ## template inline
 
-L'instance de **Vue** propose également une propriété `template` permettant de spécifier directement la chaîne de *template* à utiliser : 
+L'instance de **Vue** propose également une propriété `template` permettant de spécifier directement la chaîne de *template* à utiliser :
 
 ```javascript
 new Vue({
@@ -46,7 +46,7 @@ new Vue({
 })
 ```
 
-On utilise généralement une balise `script` avec un type `text/x-template` : 
+On utilise généralement une balise `script` avec un type `text/x-template` :
 
 ```html
 <div id="app"></div>
@@ -63,7 +63,7 @@ On utilise généralement une balise `script` avec un type `text/x-template` :
 
 ## Proxy
 
-Par défaut, la Vue peut être utilisée comme un **proxy** pour accéder au modèle : 
+Par défaut, la Vue peut être utilisée comme un **proxy** pour accéder au modèle :
 
 ```javascript
 var instance = new Vue({
@@ -83,7 +83,7 @@ Les propriétés restent **réactives**
 
 ## watch
 
-On peut également surveiller les changements *depuis l'extérieur* avec `$watch`: 
+On peut également surveiller les changements *depuis l'extérieur* avec `$watch`:
 
 ```javascript
 var instance = new Vue({
@@ -99,7 +99,7 @@ instance.$watch('foo', function(newVal, oldVal){
 
 ## Cycle de vie
 
-L'instance de Vue passe par plusieurs étapes lorsque elle est instancée et **poussée** dans le DOM. Chaque étape peut être interceptée avec un **hook** : 
+L'instance de Vue passe par plusieurs étapes lorsque elle est instancée et **poussée** dans le DOM. Chaque étape peut être interceptée avec un **hook** :
 
 ```javascript
 var instance = new Vue({
@@ -130,18 +130,19 @@ Voir pour plus de détails : <https://vuejs.org/v2/guide/instance.html#Lifecycle
 
 ## el et mount
 
-La propriété `el` permet d'indiquer où dans le DOM la vue doit être *montée*. Si il n'est pas précisé, l'instance est présente en mémoire, et on pourra utiliser `$mount(selector)` pour *monter* la vue dans *selector* : 
+La propriété `el` permet d'indiquer où dans le DOM la vue doit être *montée*. Si il n'est pas précisé, l'instance est présente en mémoire, et on pourra utiliser la méthode `$mount(selector)` pour *monter* la vue dans *selector* :
 
 ```javascript
 var vue = new Vue({
   template: "<h1>Super template</h1>"
 });
+
 vue.$mount('#app');
 ```
 
 ## extend
 
-Si on a besoin de réutiliser une vue, on peut la déclarer avec la méthode `extend`, cela permet de fixer un code commun et des valeurs par défaut : 
+Si on a besoin de réutiliser une vue, on peut la déclarer avec la méthode `extend`, cela permet de fixer un code commun et des valeurs par défaut :
 
 ```javascript
 var MaVue = Vue.extend({
@@ -162,12 +163,13 @@ NOTE : l'attribut `data` est géré par une fonction anonyme pour éviter les pr
 
 ## Store (modèle commun)
 
-Si plusieurs vues ont besoin de partager un même modèle, on peut passer par un objet : 
+Si plusieurs vues/composants ont besoin de partager un même modèle, on peut passer par un objet :
 
 ```javascript
 var common = {
   foo: "Valeur commune"
 };
+
 var MaVue = Vue.extend({
   template: '<div><h1>{{value}} / {{common.foo}}</h1>'
     +'<input v-model="value"/>'
@@ -188,19 +190,24 @@ new MaVue({ el : "#vue2", data: { value: "Dans VUE2"}});
 
 ## Présentation
 
-Les **composants** sont une des fonctionnalités les plus puissantes dans VueJS. Ils permettent de mieux structurer son code en isolant une partie d'une vue pour la réutiliser ou la simplifier.
+Les **composants** sont une des fonctionnalités les plus puissantes dans VueJS. Ils permettent de mieux structurer le code en isolant une partie d'une vue pour la réutiliser ou la simplifier.
 
-Elles ressemblent à l'utilisation de `extend`.
+Ils sont également centrale dans les *single page application* car VueRouter repose essentiellement sur l'utilisation des composants.
+
+Ils ressemblent à l'utilisation de `extend`.
 
 ## Déclaration
 
 On commence par déclarer le composant :
 
 ```javascript
+//Composant générique
+var MonComposant = {
+   template: '<h1>Mon Composant !</h1>'
+}
+
 // Déclaration globale du composant
-Vue.component('mon-composant', {
-  template: '<h1>Mon Composant !</h1>'
-})
+Vue.component('mon-composant', MonComposant);
 
 new Vue({el: "#app"})
 ```
@@ -237,7 +244,7 @@ Ce mécanisme permet de se prémunir de certains conflits de nommage comme le fe
 
 ## Slot
 
-Dans la vue, le composant implanté peux avoir un contenu : 
+Dans la vue, le composant implanté peux avoir un contenu :
 
 ```html
 <div id="app">
@@ -245,7 +252,7 @@ Dans la vue, le composant implanté peux avoir un contenu :
 </div>
 ```
 
-On utilisera ensuite dans le template un **slot** pour injecter ce contenu dans le composant, le **slot** peut avoir un contenu par défaut : 
+On utilisera ensuite dans le template un **slot** pour injecter ce contenu dans le composant, le **slot** peut avoir un contenu par défaut :
 
 ```javascript
 // Déclaration globale du composant
@@ -258,7 +265,7 @@ new Vue({el: "#app"})
 
 ## Slot nommés
 
-On peut imaginer des composants disposant de plusieurs **slot** : 
+On peut imaginer des composants disposant de plusieurs **slot** :
 
 ```html
 <!-- Template du composant -->
@@ -269,7 +276,7 @@ On peut imaginer des composants disposant de plusieurs **slot** :
 </div>
 ```
 
-puis à l'usage : 
+puis à l'usage :
 
 ```html
 <div id="app">
@@ -282,7 +289,7 @@ puis à l'usage :
 </div>
 ```
 
-Les binding seront par contre relatif à l'APP, pas le composant.
+Les binding seront par contre relatif à l'APP, pas au composant.
 
 
 ## Wrapper avec is
@@ -340,6 +347,7 @@ new Vue({
 Dans l'exemple précédent, si l'on voulait *brancher* les composants sur la même source, il faut que la fonction data retourne le même pointeur, on parle de **Store** ou de **State partagés** :
 
 ```javascript
+// Données communes
 var store {
   compteur: 0
 };
@@ -436,7 +444,7 @@ NOTE, le `$on` est généralement utilisé *hors vue*.
 
 ## Vue et composant
 
-On utilisera la directive `v-on:event` dans les *template* de la vue pour réagir aux événements propagé depuis le composant : 
+On utilisera la directive `v-on:event` dans les *template* de la vue pour réagir aux événements propagé depuis le composant :
 ```html
 <div id="app">
   <enfant v-on:supprimer="enfantSupprime"></enfant>
@@ -503,7 +511,7 @@ new Vue({
 
 ## avec un else
 
-Pour réaliser des transitions entre différents éléments inter-dépendants, il faudra ajouter une clef unique a chaque élément `key="unikey"` : 
+Pour réaliser des transitions entre différents éléments inter-dépendants, il faudra ajouter une clef unique a chaque élément `key="unikey"` :
 
 ```html
 <div id="app">
@@ -515,7 +523,7 @@ Pour réaliser des transitions entre différents éléments inter-dépendants, i
 </div>
 ```
 
-## mode 
+## mode
 
 Lors de transitions entres éléments, les transitions sont jouées en même temps (ce qui peut donner un résultat disgracieux selon la mise en page)
 
@@ -535,17 +543,12 @@ On peut utiliser un `mode` pour indiquer à VueJS comment il doit enchaîner les
 - `in-out` : Jouer d'abord l'entrée, puis la sortie
 
 
-## switch
+## Allé plus loin
 
-## Enchaînement
+VueJS permet également de gérer les transitions par programmation, et propose également des transitions sur les listes (lors d'un trie par exemple). La documentation officielle propose des exemples détaillés.
 
-## Listes
-
-## Par programmation (jQuery)
 
 # Annexe
-
-## Bus
 
 ## Directives personnalisées
 
@@ -564,7 +567,3 @@ Vue.directive('jeanclaudifier', {
   <strong v-jeanclaudifier>Pas JC</strong>
 </div>
 ```
-
-## Mixins
-
-TODO

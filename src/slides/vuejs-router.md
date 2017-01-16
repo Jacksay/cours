@@ -21,7 +21,7 @@ VueRouter se présente sous la forme d'un fichier javascript (<http://router.vue
 <script src="path/to/vue-router.js"></script>
 ```
 
-Puis on demande à VueJS d'utiliser VueRouter :
+Puis on demande à VueJS d'utiliser VueRouter (facultatif) :
 
 ```javascript
 // Activation de VueRouter
@@ -37,7 +37,7 @@ That's all folk
 On commence par associer à une route un composant à utiliser pour le rendu :
 
 ```javascript
-// Composants
+// Configuration des composants
 var Accueil = { template: "<h1>Page d'accueil</h1>"};
 var Liste = { template: "<h1>Liste</h1>"}
 
@@ -56,6 +56,8 @@ var application = new Vue({
 })
 ```
 
+Il n'est pas necessaire de déclarer les composants au sein de l'instance de vue
+
 ## Dans l'application
 
 Dans le template, VueRouter propose un composant dédié à l'affichage des composants *routés* : `router-view` :
@@ -63,7 +65,7 @@ Dans le template, VueRouter propose un composant dédié à l'affichage des comp
 ```html
 <div id="app">
   <h1>Mon Application</h1>
-  <router-vie></router-view>
+  <router-view></router-view>
 </div>
 ```
 
@@ -126,12 +128,6 @@ Puis dans les templates :
 </div>
 ```
 
-# Zonage
-
-## Route à plusieurs composants
-
-DEMO
-
 # Routes dynamiques
 
 ## Paramètres d'URL
@@ -188,7 +184,7 @@ Pour les routers link, on utilisera les routes nommées pour affecter des param�
 
 ## watch
 
-Astuce : On peut surveiller au sein d'un composant les changements d'URL en utilisant un *watcher* sur la clef `$route` :
+Astuce : On peut surveiller au sein d'un composant ou de la vue les changements d'URL en utilisant un *watcher* sur la clef `$route` :
 
 ```javascript
 //
@@ -204,28 +200,6 @@ var Fiche = {
       console.log('Ancienne', ancienne);
     }
   }  
-
 ```
 
-# Route hiérarchique
-
-##
-
-On peut décliner des URL avec des URL enfants :
-
-```javascript
-// Routes
-var router = new VueRouter({
-  routes: [
-      // ...
-      {
-        path: "/personnages",
-        component: Liste,
-        children: [
-          path: "/:id",
-          component: Fiche
-        ]
-      }
-  ]
-});
-```
+Cela permet de gérer les modifications du modèle selon la route utilisée
