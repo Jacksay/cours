@@ -1,0 +1,8 @@
+*~
+*.aux
+*.log
+*.out
+*.gz
+*.bkp
+.git
+.DS_Store

@@ -6,3 +6,4 @@ dist
 examples
 src/css/.sass-cache
 **/.sass-cache
+deploy.sh

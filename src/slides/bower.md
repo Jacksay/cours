@@ -12,7 +12,7 @@ A l'instars de Ivy ou Maven pour Java, Composer pour PHP, **Bower** va gérer au
 
 ## Installation
 
-Bower est un outil **NodeJS** (Node doit donc être installé). Dans la console de Node JS on peut installer bower avec la commande : 
+Bower est un outil **NodeJS** (Node doit donc être installé). Dans la console de Node JS on peut installer bower avec la commande :
 
 ```bash
 npm install bower
@@ -26,7 +26,7 @@ npm install -g bower
 
 ## Installation non-root
 
-Si on a pas les droits root, on peut installer bower pour l'utilisateur courant : 
+Si on a pas les droits root, on peut installer bower pour l'utilisateur courant :
 
 ```bash
 cd ~
@@ -38,13 +38,13 @@ cat "alias bower='~/node_modules/bower/bin/bower'" >> ~/.bashrc
 
 ## Rechercher un paquet
 
-On recherche avec la commande `bower search ???` : 
+On recherche avec la commande `bower search ???` :
 
 ```bash
 bower search jquery
 ```
 
-Donne : 
+Donne :
 
 ```plain
 Search results:
@@ -65,7 +65,7 @@ Search results:
 
 ## Installer un paquet
 
-Bower permet d'installer des librairies Javascript automatiquement : 
+Bower permet d'installer des librairies Javascript automatiquement :
 
 ```bash
 bower install jquery
@@ -84,7 +84,7 @@ L'initialisation d'un projet bower permet de partager un projet, mais surtout de
 bower init
 ```
 
-Il vous posera une série de question... Pour obtenir un fichier **bower.json** : 
+Il vous posera une série de question... Pour obtenir un fichier **bower.json** :
 
 ```javascript
 {
@@ -133,11 +133,11 @@ Par la suite, vous pouvez mettre à jour les dépendances
 bower update
 ```
 
-Et Bower d'occupera de mettre à jour les librairies et leurs dépendances. En cas de conflit, tout sera indiqué
+Et Bower d'occupera de mettre à jour les librairies et leurs dépendances. En cas de conflit, tout sera indiqué et bower vous demandera ce qu'il doit faire pour résoudre le problème. (Quelles versions utiliser).
 
 ## Install
 
-Si l'on récupère un projet avec un bower.json, on peut installer les dépendances en utilisant install : 
+Si l'on récupère un projet avec un bower.json, on peut installer les dépendances en utilisant install :
 
 ```bash
 bower install
@@ -148,6 +148,7 @@ bower install
 Il est également possible de spécifier à bower la version que l'on souhaite installer (le tilde permet d'indique la version approximative) :
 
 ```bash
+# Installe moi Bootstrap V2QuelqueChose
 bower install --save bootstrap#~2
 ```
 
@@ -155,7 +156,7 @@ On peut également indiquer des *ranges*, une version minimum/maximum, plus d'in
 
 ## .bowerrc
 
-Le fichier `.bowerrc` permet d'indiquer à bower des paramètres : 
+Le fichier `.bowerrc` permet d'indiquer à bower des paramètres :
 
  - Emplacement pour l'installation
  - Réglage du proxy
@@ -163,7 +164,7 @@ Le fichier `.bowerrc` permet d'indiquer à bower des paramètres :
 
 ## Emplacement des librairies
 
-Le fichier **.bashrc** est généralement utiliser pour indiquer où bower doit déposer les fichiers : 
+Le fichier **.bashrc** est généralement utiliser pour indiquer où bower doit déposer les fichiers :
 
 ```javascript
 {
@@ -182,7 +183,7 @@ Lorsque l'on est derrière un proxy, on peut le préciser à bower si besoin (da
 }
 ```
 
-et avec une authentification : 
+et avec une authentification :
 
 ```javascript
 {
@@ -193,7 +194,7 @@ et avec une authentification :
 
 ## Proxy Github
 
-En cas de problème d'accès, il est possible que ça bloque lors de l'accès à Github : 
+En cas de problème d'accès, il est possible que ça bloque lors de l'accès à Github :
 
 ```bash
 # Dans la console
@@ -201,7 +202,7 @@ git config --global http.proxy http://localhost:3128
 git config --global https.proxy http://localhost:3128
 ```
 
-Généralement, un configuration système standard doit fonctionner : 
+Généralement, un configuration système standard doit fonctionner :
 
 ```bash
 # ~/.bashrc
@@ -210,10 +211,3 @@ export https_proxy=http://fr-proxy.example.com:3128
 ```
 
 # MERCI
-
-
-
-
-
-
-

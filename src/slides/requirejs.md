@@ -77,6 +77,8 @@ Exemple de contenu :
 console.log('Execution du contenu de fichier1.js !');
 ```
 
+Le format utilisé par requirejs est **AMD**, d'autres existent (**CommonJS** utilisé par NodeJS).
+
 
 ## Usage simple : plusieurs fichiers
 
