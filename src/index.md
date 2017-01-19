@@ -1,24 +1,34 @@
-% Enseignement
-% Technologies du web
-% Stéphane Bouvry, 2017
+% UMDN4A : Applications Web
+% Stéphane Bouvry
+% DNR2i, Université de Normandie, 2017
 
 # VUEJS
 
-## cours 1
+## Session 1
 
 - [CM](slides/vuejs-1.html)
 - [TP](cours/vuejs-tp-1.html), [Correction](ressources/VueTP1-correction.zip)
 
+## Session 2
 
-# XML
+- [CM](slides/vuejs-2.html) [VueResource](slides/vuejs-resource.html) [VueRouter](slides/vuejs-router.html)
+- [TP](cours/vuejs-tp-2.html)
 
-## CM1
+
+
+---
+
+# Anciens cours (2015)
+
+## XML
+
+### Session 1
 
 - [Cour 1A : XML](slides/xml-01.html)
 - [Cour 1B : DTD](slides/xml-02-dtd.html)
 - [Cour 1C : XMLSchema](slides/xml-03-xml-schema.html)
 
-## CM 2
+### Session 2
 
 - [Cour 2A : XPATH](slides/xml-04-xpath.html)
 - [Cour 2B : XSLT](slides/xml-05-xslt.html) : [ TP : [TP XSLT](cours/xml-s2-tp2.html) ]

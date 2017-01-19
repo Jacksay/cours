@@ -10,31 +10,54 @@
 
 A l'instars de Ivy ou Maven pour Java, Composer pour PHP, **Bower** va gérer automatiquement les dépendances.
 
-## Installation
+## Prérequis
 
-Bower est un outil **NodeJS** (Node doit donc être installé). Dans la console de Node JS on peut installer bower avec la commande :
+**NodeJS** / **Npm** : Bower est une application NodeJS et elle utilise également npm (Ils sont donc requis)
+
+**Git** : L'obtention des sources est (majoritairement) faite avec GIT (via Github), git doit donc être également installé sur le système.
 
 ```bash
-npm install bower
+node -v; npm -v; git --version
+v6.9.1
+4.1.2
+git version 2.7.4
 ```
 
-On peut également utiliser l'option `-g` pour une installation globale (necessite les droits d'administrateur)
+## Installation globale
+
+Bower est un outil **NodeJS** (Node doit donc être installé). Depuis le terminal (ou la console NodeJS sous windows) on peut installer *bower* de façon globale avec la commande :
 
 ```bash
 npm install -g bower
 ```
 
-## Installation non-root
-
-Si on a pas les droits root, on peut installer bower pour l'utilisateur courant :
+Sous linux/mac, la commande doit être précédée de **sudo** :
 
 ```bash
+sudo npm install -g bower
+```
+
+## Installation non-root
+
+Si l'on ne dispose pas des droits *root*, on peut installer *bower* pour l'utilisateur courant :
+
+```bash
+## On va dans le dossier de l'utilisateur courant
 cd ~
+
+## On installe Bower
 npm install bower
+```
+
+Puis on utilise Bower avec la commande **~/node_modules/bower/bin/bower**.
+
+On peut également se faire un alias :  
+
+```bash
 cat "alias bower='~/node_modules/bower/bin/bower'" >> ~/.bashrc
 ```
 
-# Utilisation simple (OKLM)
+# Utilisation (simple)
 
 ## Rechercher un paquet
 
@@ -68,11 +91,10 @@ Search results:
 Bower permet d'installer des librairies Javascript automatiquement :
 
 ```bash
-bower install jquery
+bower install bootbox
 ```
 
-Par défaut, les fichiers sont installés dans le dossier **bower_components**
-
+Par défaut, les fichiers sont installés dans le dossier **bower_components**, bower va également vérifier les dépendances utilisées et les ajouter à l'installation.
 
 # Projet bower
 

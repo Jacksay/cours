@@ -224,7 +224,7 @@ gulp.task("groupDeTaches", ["bonjour", "faireuntour"]);
 
 ## Tâche par défaut
 
-C'est la tâche exécutée si aucune tâche n'est précisé :
+C'est la tâche exécutée si aucune tâche n'est précisée :
 
 ```javascript
 var gulp = require("gulp");
@@ -347,9 +347,16 @@ gulp.task("ma-tache", function(){
 
 ## Destinations
 
-Le destination est relative à la *wildcard* :
+Le destination est relative à la *wildcard*.
 
-EXEMPLE
+```javascript
+var gulp = require("gulp");
+
+gulp.task("ma-tache", function(){
+	gulp.src("./src/imgs/**/*.{jpg,png,gif}")
+		 .pipe(gulp.dest("./dist/imgs"));
+});
+```
 
 
 # Watch

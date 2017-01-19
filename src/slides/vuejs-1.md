@@ -1,6 +1,6 @@
 % ![VueJS](../images/vuejs.png)<br>
 % Vue.js
-% 2016
+% 2017
 
 # Introduction
 

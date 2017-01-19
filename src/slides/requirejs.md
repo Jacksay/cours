@@ -104,6 +104,18 @@ requirejs(['fichier1', 'fichier2'], function(){
 });
 ```
 
+## Asynchrone
+
+L'intêret principal à retenir est que le chargement est **asynchrone** :
+
+```javascript
+document.querySelector('#button').addEventListener('click', function(){
+   // Les fichiers ne sont chargés que au click
+   requirejs(['fichier1', 'fichier2'], function(){
+     console.log('fichier1 et 2 sont chargés!');
+   });
+});
+```
 
 # Configuration{data-background="../images/illustrations/configuration.jpg"}
 
@@ -111,14 +123,20 @@ requirejs(['fichier1', 'fichier2'], function(){
 
 La configuration permet de préciser à **RequireJS** :
 
- * L'emplacement des fichiers JS
- * Les modules (alias et emplacement)
- * Les dépendances
+ - L'emplacement des fichiers JS
+ - Les modules (alias et emplacement)
+ - Les dépendances
 
 ```javascript
+// config.js
 requirejs.config({
   // Configuration
 });
+```
+
+```html
+<script src="path/to/require.js"></script>
+<script src="path/to/config.js"></script>
 ```
 
 ## Emplacement avec baseUrl
@@ -204,7 +222,7 @@ si d'autres balises `scripts` avec du code suivent cet appel, il est possbile qu
 </script>
 ```
 
-Mieux vaut utiliser les dépendances.
+Mieux vaut utiliser les dépendances, en tout les cas **ne jamais utiliser data-main pour charger la configuration seule**.
 
 
 
