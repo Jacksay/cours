@@ -1,0 +1,19 @@
+#!/bin/bash
+
+################################################################################
+#
+# DEPLOIEMENT en PRODUCTION
+#
+# copier le fichier :
+# $ cp deploy.sh.dist deploy.sh
+#
+# fichier:
+#   - deploy-prod.sh
+#   - exclude-prod.txt :
+#
+################################################################################
+
+# Exemple simple
+serverPath='login@host:~/path/'
+#
+rsync -e 'ssh' -avz --exclude-from 'exclude-prod.txt' --progress  ./ $serverPath

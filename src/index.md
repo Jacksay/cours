@@ -7,7 +7,7 @@
 ## cours 1
 
 - [CM](slides/vuejs-1.html)
-- [TP](cours/vuejs-tp-1.html)
+- [TP](cours/vuejs-tp-1.html), [Correction](ressources/VueTP1-correction.zip)
 
 
 # XML

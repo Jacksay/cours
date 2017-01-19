@@ -6,7 +6,7 @@
 
 ## Préambule
 
-RESTFul est un standard d'architecture client-serveur indépendante de la technologie utilisée.
+RESTFul est un standard d'architecture client-serveur indépendant de la technologie utilisée.
 
 
 ## Format
