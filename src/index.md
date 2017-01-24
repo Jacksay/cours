@@ -11,10 +11,12 @@
 
 ## Session 2
 
-- [CM](slides/vuejs-2.html) [VueResource](slides/vuejs-resource.html) [VueRouter](slides/vuejs-router.html)
-- [TP](cours/vuejs-tp-2.html)
+- [CM](slides/vuejs-2.html) [VueResource](slides/vuejs-resource.html)
+- [TP](cours/vuejs-tp-2.html), [Correction](ressources/VueTP2-correction.zip)
 
-
+## Session 3
+- [VueRouter](slides/vuejs-router.html)
+- [Devoir](cours/vuejs-tp-note.html)
 
 ---
 

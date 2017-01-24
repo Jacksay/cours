@@ -14,10 +14,6 @@ Les *task runner* sont utilisés pour compiler, générer des fichiers à partir
 >- **make** et ces *makfile* (Sous unix)
 >- **ant** ou **maven** pour Java
 
-
-## SE SIMPLIFIER LA VIE !{data-background="#ff6600"}
-
-
 ## Grunt
 
 <div class="col">
@@ -248,16 +244,18 @@ gulp.task("default", ["tache1", "tache2", "tacheN"]);
 La méthode `gulp.run('task')` permet également d'éxécuter une tâche dans une autre :
 
 ```javascript
-var gulp = reqire('gulp');
+var gulp = require('gulp');
 
 gulp.task('tache1', function(){
 	console.log("Faire quelque chose");
 });
 
 gulp.task('tache2', function(){
-	gulp.run('tache1');
+	gulp.run(['tache1']);
 });
 ```
+
+La méthode `run([])` est dépréciée depuis la version 3.9.
 
 
 # Stream

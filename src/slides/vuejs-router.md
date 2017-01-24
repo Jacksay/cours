@@ -82,7 +82,7 @@ On peut ensuite utiliser l'URL pour basculer l'affichage des composants dans la 
     <router-link to="/">Accueil</router-link>
     <router-link to="/personnages">Liste</router-link>
   </nav>
-  <router-vie></router-view>
+  <router-view></router-view>
 </div>
 ```
 
@@ -97,7 +97,7 @@ Le composant **router-link** a un attribut `tag` pour spécifier la balise à ut
     <router-link to="/" tag="button">Accueil</router-link>
     <router-link to="/personnages" tag="button">Liste</router-link>
   </nav>
-  <router-vie></router-view>
+  <router-view></router-view>
 </div>
 ```
 
@@ -109,8 +109,8 @@ Les changements de format des URL necessitera de mettre à jour les templates. M
 // Routes
 var router = new VueRouter({
   routes: [
-      { path: "/", component: Accueil, name="accueil" },
-      { path: "/personnages", component: Liste, name="liste" }
+      { path: "/", component: Accueil, name: "accueil" },
+      { path: "/personnages", component: Liste, name: "liste" }
   ]
 });
 ```
@@ -121,11 +121,107 @@ Puis dans les templates :
 <div id="app">
   <h1>Mon Application</h1>
   <nav>
-    <router-link :to="{ name: 'accueil' }" tag="button">Accueil</router-link>
-    <router-link :to="{ name: 'liste' }" tag="button">Liste</router-link>
+    <router-link :to="{ name: 'accueil' }">Accueil</router-link>
+    <router-link :to="{ name: 'liste' }">Liste</router-link>
   </nav>
-  <router-vie></router-view>
+  <router-view></router-view>
 </div>
+```
+
+## Dans l'instance de vue
+
+On peut également utiliser `$router.push('/url')` depuis l'instance de vue pour naviguer par
+programmation :
+
+```javascript
+new Vue({
+   // ...
+   methods: {
+      someMethod: function(){
+         // Fonctionne comme :to dans le template
+         this.$router.push('/someurl')
+      }
+   }
+})
+```
+
+# Données
+
+## En utilisant props (Compliqué)
+
+```javascript
+var Fiche = {
+   template: "<h1>FICHE</h1>",
+   props: ['personnages']
+};
+
+// ...
+new Vue({
+   // ...
+   data: {
+      personnages: []
+   }
+})
+```
+
+```html
+<router-view :personnages="personnages"></router-view>
+```
+
+Problème, il faudra déclarer des les props de tous les composants les données transmises (fastidieux).
+
+## Avec un store (net)
+
+```javascript
+var Store: {
+   foo: "bar",
+   list: ['toto', 'tutu']
+};
+
+var Fiche = {
+   template: "<h1>FICHE</h1>",
+   data: function(){
+      return {
+         store: Store
+      }
+   }
+};
+var Liste = {
+   template: "<h1>liste</h1>",
+   data: function(){
+      return {
+         store: Store
+      }
+   }
+};
+```
+
+# Faire communiquer
+
+## Event
+
+Pour éviter de coupler trop fortement le composant avec la vue, on peut utiliser l'émission d'événement avec `$emit('event', params...)` dans le composant et `v-on:event` dans le template de la vue (l'événement **DOIT ÊTRE EN MINUSCULE**, il passe par le DOM) :
+
+```html
+<!-- Template composant -->
+<a href="#" @click.prevent="$emit('myevent', 'foo value', 'bar value')">TEST</a>
+```
+
+```html
+<!-- Template composant -->
+<router-view @myevent="methodeVue">TEST</a>
+```
+
+```javascript
+new Vue({
+   // ...
+   methods: {
+      methodeVue: function( varFoo, varBar ){
+         console.log(varFoo); // affiche 'foo'
+         console.log(varBar); // affiche 'bar'
+      }
+   }
+})
 ```
 
 # Routes dynamiques
@@ -178,7 +274,7 @@ Pour les routers link, on utilisera les routes nommées pour affecter des param�
     <router-link :to="{ name: 'accueil', params: { id: 1} }" tag="button">Fiche 1</router-link>
     <router-link :to="{ name: 'accueil', params: { id: 2} }" tag="button">Fiche 2</router-link>
   </nav>
-  <router-vie></router-view>
+  <router-view></router-view>
 </div>
 ```
 

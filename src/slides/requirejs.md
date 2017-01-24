@@ -154,7 +154,7 @@ Maintenant, par défaut, les fichiers chargés le seront depuis le dossier **js/
 
 ## Déclarer des emplacements avec paths
 
-La propriété **paths** permet de déclarer les alias et l'emplacement des fichiers :
+La propriété **paths** permet de déclarer les alias et l'emplacement des fichiers, **Il ne faut pas mettre l'extension .js** :
 
 ```javascript
 requirejs.config({
