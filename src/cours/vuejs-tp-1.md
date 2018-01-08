@@ -1,5 +1,50 @@
 # VueJS
 
+## Présentation
+
+Dans ce premier atelier, vous allez faire connaissance avec VueJS pour la production d'interface web.
+
+L'application sera une interface type liste/fiche permettant de visualiser des fiches personnages de la série *Game Of Thrones*.
+
+### Modèle de donnée
+
+> Dans le cadre de ce TP, un modèle vous sera fournis au format JSON contentant des images au format BASE64. Le fichier étant extrèmement volumineux, certains éditeurs de texte ont souvent un peu de mal à l'ouvrir.
+
+Voici la structure des données du modèle fournis.
+
+```javascript
+// Array contenant un objet pour chaque personnage
+var personnages = [
+  {
+    id: "identifiant",
+    surnom: "Surnom, vide ou null",
+    prenom: "Le prénom",
+    nom: "Le nom",
+    dateCreated: "2017-01-08",
+    image: "data:image/jpeg;base64;/XXXXXXXX",
+    maison: "IDMAISON, ID de l'objet maison ou vide",
+    description: "La bio du personnage"
+  },
+  {
+    // autre personnage
+  }
+];
+
+var maisons: {
+  IDMAISON: {
+    id: "IDMAISON",
+    region: "Région",
+    capitale: "Capitale",
+    devise: "La petite maxime qui va bien"
+  },
+  "AUTREIDMAISON": {
+    // etc...
+  }
+};
+```
+
+Vous pouvez télécharger le fichier contenant des données de test ici [model.js](../ressources/model.js)
+
 ## Etape 1 : Liste des personnages
 
 A partir des données fournies et en utilisant **VueJS**(https://vuejs.org/), affichez les informations pour obtenir ce type de résultat. Vous pourrez vous aider d'un *framework* tel que **Bootstrap** pour gérer le rendu et la mise en page.
@@ -37,11 +82,11 @@ Sur chaque personnage, ajoutez un bouton supprimer fonctionnel
 
 ## Etape 5b : Editer
 
-Sur chaque personnage, ajoutez un bouton éditer. Il ouvrira une fenêtre modale contenant un formulaire pour éditer automatiquement (sans bouton enregistrer) le contenu de la fiche correspondant.
+Sur chaque personnage, ajoutez un bouton éditer. Il ouvrira une fenêtre modale contenant un formulaire pour éditer automatiquement (sans bouton enregistrer) le contenu de la fiche correspondant. Dans un premier temps, ne vous occupez pas de l'image.
 
 ![Modification des données](../images/vue/etape5.png)
 
-Dans un deuxième temps et en vous appuyant sur FileReader, trouvez une solution pour mettre à jour l'image.
+Dans un deuxième temps et en vous appuyant sur **FileReader**, trouvez une solution pour mettre à jour l'image (indice, c'est du Javascript, rien à voir avec VueJS).
 
 ## Etape 6 : Nouveau
 

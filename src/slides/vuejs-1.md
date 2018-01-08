@@ -16,19 +16,29 @@ Les permières *applications web* étaient généralement basées sur **jQuery**
 
 Pour répondre aux problématiques de maintenabilité et de réusabilité, les *design pattern* sont arrivés dans le microcosme Javascript.
 
+## MV*
+
+Le MVC front n'est pas un MVC "pur" au sens théorique. On parle
+
 ## Précurseurs
 
- - Backbone (2010)
- - Ember 1.x (2011)
- - Angular 1.x (2010)
- - Knockout (2010)
+ * Backbone (2010)
+ * Ember 1.x (2011)
+ * Angular 1.x (2010)
+ * Knockout (2010)
 
 ## Les FW du moment
 
- - Angular 2
- - React
- - Ember 2
- - VueJS 2
+ * Angular 2
+ * React
+ * Ember 2
+ * VueJS 2
+
+## VueJS 2
+
+ - **évolutif** : Écosystème riche de bibliothèques complémentaires pour enrichir les fonctionnalités.
+ - **léger** 20Ko sans dépendance
+ - **Rapide** Il utilise un DOM virtuel pour optimiser l'actualisation de l'UI.
 
 # Installation
 
