@@ -18,19 +18,21 @@ Pour répondre aux problématiques de maintenabilité et de réusabilité, les *
 
 ## MVC
 
-![](../images/mvc.jpg) 
+Le MVC  classique
+
+![](../images/diagram-mvc.png)
 
 ## MV*
 
 Le MVC front n'est pas un MVC "pur" au sens théorique. On parle de MV*, et on trouve respectivement le MVP et MVVM.
 
+## MVCM
+
+![](../images/diagram-mvvm.png)
+
 ## MVP
 
-![](../images/mvc-mvp.png)
-
-## MVVM
-
-![](../images/mvc-mvvm.png)
+![](../images/diagram-mvp.png) 
 
 ## Précurseurs
 
