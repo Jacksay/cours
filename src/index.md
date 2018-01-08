@@ -18,6 +18,19 @@
 - [VueRouter](slides/vuejs-router.html)
 - [Devoir](cours/vuejs-tp-note.html)
 
+
+## Session 4
+
+Outils évoqués :
+
+- [Bower](slides/bower.html) Gestionnaire de dépendance
+- [RequireJS](slides/requirejs.html) Javascript Loader AMD
+- [Gulp](slides/gulp.html) Task runner
+
+Exemple d'utilisation de templates externes avec VueJS et RequireJS
+[Example ICI](cours/exemple-vue-requirejs.html)
+
+
 ---
 
 # Anciens cours (2015)

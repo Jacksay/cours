@@ -16,9 +16,21 @@ Les permières *applications web* étaient généralement basées sur **jQuery**
 
 Pour répondre aux problématiques de maintenabilité et de réusabilité, les *design pattern* sont arrivés dans le microcosme Javascript.
 
+## MVC
+
+![](../images/mvc.jpg) 
+
 ## MV*
 
-Le MVC front n'est pas un MVC "pur" au sens théorique. On parle
+Le MVC front n'est pas un MVC "pur" au sens théorique. On parle de MV*, et on trouve respectivement le MVP et MVVM.
+
+## MVP
+
+![](../images/mvc-mvp.png)
+
+## MVVM
+
+![](../images/mvc-mvvm.png)
 
 ## Précurseurs
 
