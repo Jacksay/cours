@@ -6,8 +6,29 @@
 
 ## Webapp
 
-## MVC
+Depuis plusieurs années, les applications se sont déportées du client lourd, vers des clients dit "légers" : les Webapp
 
+## Code spagetti
+
+Les permières *applications web* étaient généralement basées sur **jQuery** (ou équivalent), plus l'application était complexe, plus le code se complexifié, l'effet **code spagetti**
+
+## Design pattern et framework
+
+Pour répondre aux problématiques de maintenabilité et de réusabilité, les *design pattern* sont arrivés dans le microcosme Javascript.
+
+## Précurseurs
+
+ - Backbone (2010)
+ - Ember 1.x (2011)
+ - Angular 1.x (2010)
+ - Knockout (2010)
+
+## Les FW du moment
+
+ - Angular 2
+ - React
+ - Ember 2
+ - VueJS 2
 
 # Installation
 

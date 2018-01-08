@@ -2,11 +2,11 @@
 
 ## Etape 1 : Liste des personnages
 
-A partir des données fournie et en utilisant **VueJS**(https://vuejs.org/), afficher les informations pour obtenir ce type de résultat. Vous pourrez vous aider d'un *framework* tel que **Bootstrap** pour gérer le rendu et la mise en page.
+A partir des données fournies et en utilisant **VueJS**(https://vuejs.org/), affichez les informations pour obtenir ce type de résultat. Vous pourrez vous aider d'un *framework* tel que **Bootstrap** pour gérer le rendu et la mise en page.
 
 ![Exemple de rendu](../images/vue/etape1.png)
 
-Si les données ne propose pas d'image, afficher une image par défaut.
+Si les données ne proposent pas d'image, affichez une image par défaut.
 
 
 ## Etape 2 : Menu d'accès rapide
@@ -18,25 +18,26 @@ Ajoutez un menu latéral permettant au click de faire défiler la page sur le pe
 
 ## Etape 3 : Recherche
 
-Ajoutez dans le menu latérale un champ de recherche rapide qui permettra de filtrer les personnages sur le nom, le prénom ou le surnom.
+Ajoutez dans le menu latéral un champ de recherche rapide qui permettra de filtrer les personnages sur le nom, le prénom ou le surnom.
 
 ![Recherche](../images/vue/etape3.png)
 
-## Etape 4 : Trie
+## Etape 4 : Tri
 
-Dans le menu latéral, ajouter un élément d'interface permettant de trier les informations (Par nom, prénom).
+Dans le menu latéral, ajoutez un élément d'interface permettant de trier les informations (Par nom, prénom).
 
-![Système de trie](../images/vue/etape4.png)
+![Système de tri](../images/vue/etape4.png)
 
-Extra : Cliquer sur un trie provoque le trie dans l'ordre croissant, un deuxième dans l'ordre décroissant.
+
+**Extra** : Cliquer sur un tri provoque le tri dans l'ordre croissant, cliquer à nouveau trie dans l'ordre décroissant. Essayez de  trouver un dispositif visuel pour indiquer si le tri est croissant ou décroissant.
 
 ## Etape 5a : Supprimer
 
-Sur chaque personnage, ajouter un bouton supprimer fonctionnel
+Sur chaque personnage, ajoutez un bouton supprimer fonctionnel
 
 ## Etape 5b : Editer
 
-Sur chaque personnage, ajouter un bouton éditer. Il ouvrira une fenêtre modale contenant un formulaire pour éditer automatiquement (sans bouton enregistrer) le contenu de la fiche correspondant.
+Sur chaque personnage, ajoutez un bouton éditer. Il ouvrira une fenêtre modale contenant un formulaire pour éditer automatiquement (sans bouton enregistrer) le contenu de la fiche correspondant.
 
 ![Modification des données](../images/vue/etape5.png)
 

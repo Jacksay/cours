@@ -58,6 +58,14 @@ On utilise généralement une balise `script` avec un type `text/x-template` :
 </script>
 ```
 
+## render personnalisé
+
+TODO
+
+## Vue.render
+
+Techniquement, VueJS dispose d'un mécanisme de précompilation de *template*. Ce mécanisme étant relativement indépendant, il peut être utilisé pour faire du SSR.
+
 
 # L'instance de Vue
 
