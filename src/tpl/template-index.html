@@ -1,63 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
 <head>
-  <meta charset="utf-8">
-  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
 
-  <link href="css/bootstrap-light/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="css/cours.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
-  $if(highlighting-css)$
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
   <style type="text/css">
-  $highlighting-css$
+      .page-header {
+        min-height: 40vh;
+        display: flex;
+      }
+      .page-header header {
+        text-align: center;
+        background: none;
+      }
+      .page-header header h1 {
+        font-weight: 900;
+        font-size: 5em;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        background: #fff;
+        padding: 1em;
+      }
+
+      .content {
+        font-size: 20px;
+        border: thin solid #ddd;
+        padding: 1em 3em;
+        color: #333;
+      }
+      .content h1 {
+        padding-left: 4px;
+        border-left: 4px solid #DDD;
+        font-weight: 900;
+        color: #777;
+        margin-left: -.5em;
+        margin-top: 2em; }
+      .content h1:first-child { font-weight: 900; margin-top: 1em; }
+
+      .content h2 { font-weight: bold; margin-top: 2em; }
+      .content h1+h2 { margin-top: 0em; }
+
+      .content h3 { border-bottom: #ddd solid thin; margin-top: 1em; padding-bottom: 4px}
+      blockquote {
+        padding: 1em 2em .5em;
+        border-radius: 1em;
+        background: #eee;
+      }
+      body {
+        font-size: 16px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url(images/illustrations/configuration.jpg);
+      }
+      table {
+        background: #fefefe;
+      }
+      table td, table th {
+        padding: .5em;
+      }
+      table tbody tr {
+        border: thin solid #ddd;
+      }
+      pre.sourceCode {
+        border: thin solid #ddd;
+        border-left-width: 8px;
+        background: #eee;
+        padding: .2em .5em;
+        font-size: .75em;}
+
+      pre.sourceCode > code:before {
+
+      }
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+$if(quotes)$
+      q { quotes: "“" "”" "‘" "’"; }
+$endif$
   </style>
-  $endif$
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$if(math)$
+  $math$
+$endif$
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+$for(header-includes)$
+  $header-includes$
+$endfor$
 </head>
 <body>
-<div>
-<article>
 $for(include-before)$
 $include-before$
 $endfor$
 $if(title)$
-<div id="$idprefix$header" class="page-header">
-  <div class="container">
-    <h1 class="title">$title$</h1>
-    $if(subtitle)$
-    <h1 class="subtitle">$subtitle$</h1>
-    $endif$
-    $for(author)$
-    <h2 class="author">$author$</h2>
-    $endfor$
-    $if(date)$
-    <h3 class="date">$date$</h3>
-    $endif$
-  </div>
-</div>
+<section class="page-header">
+<header class="jumbotron container">
+<h1 class="title">$title$</h1>
+$if(subtitle)$
+<p class="subtitle">$subtitle$</p>
+$endif$
+$for(author)$
+<p class="author">$author$</p>
+$endfor$
+$if(date)$
+<p class="date">$date$</p>
+$endif$
+</header>
+</section>
 $endif$
 $if(toc)$
-<div id="$idprefix$TOC">
-$toc$
-</div>
+<nav id="$idprefix$TOC">
+$table-of-contents$
+</nav>
 $endif$
-<div class="container content">
+<section class="container content">
 $body$
-</div>
+</section>
 $for(include-after)$
 $include-after$
 $endfor$
 
-</article>
-</div>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-4710988-16', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </body>
 </html>
