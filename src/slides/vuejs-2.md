@@ -60,7 +60,38 @@ On utilise généralement une balise `script` avec un type `text/x-template` :
 
 ## render personnalisé
 
-TODO
+Dans certains cas de figure, on peut personnaliser le rendu en définissant avec la clef `render` une procédure spécifique : 
+
+```javascript
+new Vue({
+  el: '#app',
+  data: {
+    level: 2,
+    message: "Bonjour monde"  
+  },
+  render(createElement){
+      return createElement('h' +this.level, this.message)
+  }
+})
+```
+
+## Template précompilé
+
+En interne, les *templates* sont compilés en code Javascript, mais cette compilation peut être si besoin réalisée manuellement : 
+
+```javascript
+let renderTemplate = Vue.compile('<h1>{{ message }}</h1>').render;
+
+new Vue({
+  el: '#app',
+  data: {
+    message: "Bonjour monde"  
+  },
+  render: renderTemplate
+})
+```
+
+
 
 ## Vue.render
 

@@ -10,11 +10,11 @@ Depuis plusieurs années, les applications se sont déportées du client lourd, 
 
 ## Code spagetti
 
-Les permières *applications web* étaient généralement basées sur **jQuery** (ou équivalent), plus l'application était complexe, plus le code se complexifié, l'effet **code spagetti**
+Les permières *applications web* étaient généralement basées sur **jQuery** (ou équivalent ; Mootools), plus l'application était complexe, plus le code se complexifié, l'effet **code spagetti**
 
 ## Design pattern et framework
 
-Pour répondre aux problématiques de maintenabilité et de réusabilité, les *design pattern* sont arrivés dans le microcosme Javascript.
+Pour répondre aux problématiques de maintenabilité et de réusabilité, les *design pattern* sont arrivés dans le microcosme Javascript en s'inspirant d'autres langages.
 
 ## MVC
 
@@ -24,13 +24,17 @@ Le MVC  classique
 
 ## MV*
 
-Le MVC front n'est pas un MVC "pur" au sens théorique. On parle de MV*, et on trouve respectivement le MVP et MVVM.
+Le MVC front n'est pas un MVC "pur" au sens théorique. On parle de MV*, parmis les déclinaisons les plus connues, on voit souvent revenir le MVP (Model-Vue-Presenter) et MVVM (Model-Vues-VueModel).
 
-## MVCM
+## MVVM
+
+Modélisé par *Microsoft* dans **Silverlight**, il repose sur l'utilisation du *Data Binding*.
 
 ![](../images/diagram-mvvm.png)
 
 ## MVP
+
+Très proche de MVVM
 
 ![](../images/diagram-mvp.png) 
 
