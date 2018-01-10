@@ -1138,3 +1138,13 @@ new Vue({
   }
 });
 ```
+
+# Annexe
+
+## Plus loin
+
+La chaîne **Grafikart** propose une série de vidéo (Cours complet + TP) pour découvrir en profondeur VueJS : <https://www.youtube.com/playlist?list=PLjwdMgw5TTLW-mAtlR46VajrKs4dep3y0>
+
+La documentation officielle est très complète (et en français) : <https://fr.vuejs.org/v2/guide/>
+
+Une conférence de Mathieu Breton (JS Republic) qui présente le SSR avec VueJS <https://www.youtube.com/watch?v=pWly2JhXNIw>
