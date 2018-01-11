@@ -4,6 +4,10 @@
 
 # UMDN4A : Applications web (2018)
 
+## Sujet du devoir
+
+- [Sujet du devoir - draft](cours/vuejs-tp-note.html)
+
 ## Session 1
 
 - [CM](slides/vuejs-1.html)
@@ -12,7 +16,7 @@
 ## Session 2
 
 - [CM](slides/vuejs-2.html) - [REST et VueResource](slides/vuejs-resource.html)
-- [TP](cours/vuejs-tp-2.html)
+- [TP](cours/vuejs-tp-2.html) ([Correction](ressources/VueTP2-correction.zip))
 
 ---
 

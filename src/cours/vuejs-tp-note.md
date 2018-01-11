@@ -36,7 +36,7 @@ Un écran permettra de visionner les résultats globaux pour chaques tables. Cet
 
 # Réalisations complémentaires
 
-Les propositions suivantes vous permettront de vous distinguer, vous pouvez choisir de n'en réaliser que certaines, il n'y a pas d'ordre ni d'obligation. Rien ne vous empèche d'enrichir l'application avec vos popres idées
+Les propositions suivantes vous permettront de vous distinguer, vous pouvez choisir de n'en réaliser que certaines, il n'y a pas d'ordre ni d'obligation. Rien ne vous empèche d'enrichir l'application avec vos propres idées.
 
 ## Favoriser les opérations à problème
 
@@ -56,7 +56,7 @@ Les données de l'application (les stats) sont initialement prévues pour un enf
 
 ## Sauvegarde
 
-Trouvez un moyen de permettre la sauvegarde de la progression (les stats) dans un fichier.
+Trouvez un moyen de permettre la sauvegarde de la progression dans un fichier texte. Ce fichier pourra être chargé dans l'interface pour retrouver la progression.
 
 ## Mode évaluation débloqué
 
@@ -65,8 +65,19 @@ Essayer de verrouiller le mode *évaluation* tant que l'enfant n'a pas fini le m
 
 # Rendu
 
-L'application sera accessible sur l'espace personnel d'un des étudiants et s'accompagnera d'un petit rapport où vous décrirez la structure du modèle de donnée et où vous pourrez expliquer vos choix ergonomiques et algorithmiques si besoin. Si vous n'arrivez pas à implémenter une fonctionnalité, n'hesitez pas décrire votre intention. (4 pages max).
+L'application sera accessible sur l'espace personnel d'un des étudiants et s'accompagnera d'un petit rapport où vous décrirez la structure du modèle de donnée et où vous pourrez expliquer vos choix ergonomiques et algorithmiques si besoin. Si vous n'arrivez pas à implémenter une fonctionnalité, n'hesitez pas décrire votre intention.
+
+Pensez a y indiquer votre retour critique sur VueJS
+(4/5 pages max).
 
 L'application **doit fonctionner**
 
 L'évaluation se basera sur les fonctionnalités de base mises en place, les fonctionnalités complémentaires, sur l'ergonomie et les choix graphiques, la qualité du code (bien structuré et commenté).
+
+L'application devra être sur un gestionnaire de version (GIT/Subversion).
+
+## Barème (approximatif)
+
+- L'application DOIT fonctionner
+- Ergonomie / interface
+- Fonctionnalité
