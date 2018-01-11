@@ -7,7 +7,12 @@
 ## Session 1
 
 - [CM](slides/vuejs-1.html)
-- [TP](cours/vuejs-tp-1.html)
+- [TP](cours/vuejs-tp-1.html) ([Correction](ressources/VueTP1-correction.zip))
+
+## Session 2
+
+- [CM](slides/vuejs-2.html) - [REST et VueResource](slides/vuejs-resource.html)
+- [TP](cours/vuejs-tp-2.html)
 
 ---
 

@@ -3,7 +3,7 @@ var gulp = require("gulp"),
     watch = require('gulp-watch'),
     destination = "dist/";
 
-gulp.task('default', ['watch', 'compile-slide', 'compile-cours', 'compile-index'], function() {
+gulp.task('default', ['watch', 'compile-article', 'compile-slide', 'compile-cours', 'compile-index'], function() {
 
 });
 
@@ -79,6 +79,21 @@ gulp.task('compile-cours', ['prepare', 'styles'], function() {
         }));
 });
 
+gulp.task('compile-article', ['prepare', 'styles'], function() {
+    gulp.src('src/articles/**/*.md', {
+        read: false
+    })
+        .pipe(shell([
+            'pandoc --template=src/tpl/template-article.html -s -i -t html5 <%= file.path %> -o <%= f(file.path) %>',
+        ], {
+            templateData: {
+                f: function(s) {
+                    return s.replace(/\.md/, '.html').replace(/\/src\//, '/dist/');
+                }
+            }
+        }));
+});
+
 gulp.task('compile-slide', ['prepare','styles'], function() {
     gulp.src('src/slides/*.md', {
         read: false
@@ -95,6 +110,7 @@ gulp.task('compile-slide', ['prepare','styles'], function() {
 });
 
 gulp.task('watch', function() {
+    gulp.watch('src/articles/**/*.md', ['compile-article']);
     gulp.watch('src/**/*.md', ['compile-cours', 'compile-slide', 'compile-index']);
     gulp.watch('src/**/*.css', ['styles']);
     gulp.watch('src/tpl/*.html', ['compile-cours', 'compile-slide', 'compile-index']);
